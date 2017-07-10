@@ -40,40 +40,12 @@ export default class App extends Component {
             }
         });
 
-        var options = [
-            {
-                selector: '#projects',
-                offset: 400,
-                callback: function(el) {
-                    // $(el).foreach(function(d){
-                    //     $(d).animateCss('fadeInLeft', function() {
-                    //         // $("#welcome h1:eq(1)").animateCss('fadeInRight', 1);
-                    //     });
-                    // })
-                }
-            }, {
-                selector: '#image-test',
-                offset: 500,
-                callback: function(el) {
-                    // Materialize.fadeInImage($(el));
-                }
-            }
-        ];
-
         $(".button-collapse").sideNav({closeOnClick: true});
-
-        Materialize.scrollFire(options);
     }
 
     render() {
-        let currentLocation = window.location.pathname;
-
         return (
             <div>
-                {(currentLocation == '/')
-                    ? <TopSection/>
-                    : null}
-
                 <div id="main">
                     <Navbar/>
 
