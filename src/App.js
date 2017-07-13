@@ -64,7 +64,7 @@ export default class App extends Component {
 
                     <div id="content">
                         <Switch>
-                            <Route exact path="/" component={Home}/>
+                            <Route exact path="/DivorceNegotiations" component={Home}/>
                             <Route component={PageNotFound}/>
                         </Switch>
                     </div>
