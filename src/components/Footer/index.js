@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
 import jsonData from 'json';
+import {Row, Col} from 'react-materialize';
 
 export default class Footer extends Component {
     render() {
         return (
-            <footer className="page-footer small center-align blue">
+            <footer className="page-footer small background-primary">
                 <div className="container"/>
                 <div className="footer-copyright">
-                    <div className="container">
-                        <div>
-                            Made with{" "}
-                            <i className="fa fa-heart"></i>{" "}using ReactJS and compiled with Webpack.{" "}
-                            <a className="white-text underline" href="https://github.com/jonlov/jonlov.github.io" target="_BLANK">
-                                (View source code)
-                            </a>
-                        </div>
-                    </div>
+                    <Row className="container no-margin-bottom">
+                        <Col s={6}>
+                            <img {...jsonData.about.getAvatar()}/>
+                        </Col>
+                        <Col s={6} className="right-align">
+                            © 2017 {jsonData.about.name}. All rights reserved.
+                        </Col>
+                    </Row>
                 </div>
             </footer>
         )

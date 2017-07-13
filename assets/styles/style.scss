@@ -2,30 +2,83 @@
 @import "./animate.min";
 @import "./font-awesome.min";
 @font-face {
-    font-family: 'Century Gothic';
-    src: url('../fonts/CenturyGothic.ttf') format('truetype');
+    font-family: 'SF NS Display';
+    src: url('../fonts/sfns-system-san-francisco-display.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Century Gothic Bold';
-    src: url('../fonts/CenturyGothicBold.ttf') format('truetype');
+    font-family: 'SF NS Text';
+    src: url('../fonts/SanFranciscoText-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Monaco';
-    src: url('../fonts/monaco.ttf') format('truetype');
+    font-family: 'Baskerville';
+    src: url('../fonts/baskvl.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-.monaco {
-    font-family: "Monaco";
+.SFNS-Display {
+    font-family: 'SF NS Display';
 }
 
-b {
-    font-family: "Century Gothic Bold";
+.color-gray {
+    color: #9FA3A7;
+}
+
+.FAQ {
+    letter-spacing: 0;
+    line-height: 35px;
+}
+
+h5 {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 35px;
+}
+
+.box-title {
+    color: #114683;
+    font-family: 'SF NS Display';
+    font-size: 36px;
+    letter-spacing: 0;
+    display: inline-block;
+    padding: 62px 20px;
+    margin-bottom: 35px;
+    border-top: 2px solid #FCC60A;
+    border-bottom: 2px solid #FCC60A;
+}
+
+.box-title.bigger {
+    font-size: 48px;
+}
+
+.box-title.no-top {
+    padding-top: 0;
+    padding-bottom: 60px;
+    border-top: 0;
+    border-bottom: 5px solid #FCC60A;
+
+}
+
+.background-primary {
+    background: #434350;
+    color: #fff;
+}
+
+.background-primary .box-title {
+    color: #fff;
+}
+
+.background-primary-70 {
+    background: rgba(67, 67, 80, 0.7);
+    color: #fff;
+}
+
+.background-primary-70 .background-primary-70 {
+    background: inherit;
 }
 
 .p100 {
@@ -38,6 +91,10 @@ b {
 
 .no-margin {
     margin: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
 }
 
 .justify {
@@ -80,7 +137,7 @@ b {
   includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
 body,
 html {
-    font-family: "Century Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "SF NS Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     border: 0;
     padding: 0;
@@ -88,6 +145,14 @@ html {
     /*font: inherit;*/
     /*text-decoration: inherit;
     text-align: inherit;*/
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: "SF NS Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .full-h,
@@ -122,7 +187,11 @@ a.black-text:hover {
 
 nav {
     z-index: 99999;
-    box-shadow: 0 5px 10px 0 rgba(72, 76, 88, 0.08);
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-transition: background-color 0.4s linear;
+    -ms-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
 }
 
 #sidenav-overlay {
@@ -153,7 +222,28 @@ nav {
 nav .brand-logo,
 nav a,
 nav ul a {
-    color: #333;
+    color: #fff;
+}
+
+nav ul a {
+    font-size: 12px;
+    letter-spacing: 2.4px;
+}
+
+nav .brand-logo {
+    text-transform: capitalize;
+    font-family: 'Baskerville';
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 12px;
+}
+
+nav .brand-logo span {
+    display: inline-flex;
+}
+
+nav .brand-logo span span {
+    margin-left: 10px;
 }
 
 nav .brand-logo > div > span {
@@ -193,24 +283,150 @@ section > div {
     // z-index: 990;
 }
 
-#content {
-    padding: 40px 0;
+#content > div > div {
+    padding: 90px 0 0;
 }
 
-#content > div > div {
-    padding-top: 40px;
+.carousel.carousel-slider {
+    top: initial;
+    left: initial;
+    height: initial;
+}
+
+.carousel .slide .legend {
+    -webkit-transition: initial;
+    -moz-transition: initial;
+    -ms-transition: initial;
+    -o-transition: initial;
+    transition: initial;
+    position: absolute;
+    bottom: 80px;
+    left: initial;
+    right: 0;
+    margin-left: initial;
+    width: 60%;
+    border-radius: 0;
+    background: rgba(0, 0, 0, .47);
+    color: #fff;
+    padding: 10px 160px 10px 20px;
+    font-size: 40px;
+    text-align: center;
+    opacity: 1;
+}
+
+#home {
+    padding-top: 0 !important;
 }
 
 #contact {
-    padding-top: 100px !important;
-padding-bottom: 60px;
-
+    padding-bottom: 0 !important;
 }
 
-nav.pinned+#content {
-    margin-top: 64px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+.contactForm {
+    width: 105.5%;
+    border-radius: 0;
+    margin-left: -10px;
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 80px;
+}
+
+@media only screen and (min-width: 601px) {
+    .contactForm {
+        padding: 40px 80px;
+        border-radius: 5px;
+    }
+}
+
+.contactForm .title {
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #434350;
+    letter-spacing: 2.8px;
+}
+
+.contactForm button {
+    font-size: 16px;
+    font: icon;
+    box-shadow: none;
+    background-color: #114683;
+    border-radius: 100px;
+    height: 42px;
+    letter-spacing: 0;
+}
+
+.btn-flat.disabled,
+.btn-flat:disabled,
+.btn-flat[disabled],
+.btn-floating.disabled,
+.btn-floating:disabled,
+.btn-floating[disabled],
+.btn-large.disabled,
+.btn-large:disabled,
+.btn-large:disabled,
+.btn-large[disabled],
+.btn.disabled,
+.btn:disabled,
+.btn[disabled],
+.disabled.btn-large,
+[disabled].btn-large {
+    background-color: #9B9B9B !important;
+    color: #fff!important;
+}
+
+.btn-large:hover,
+.contactForm .btn:hover {
+    box-shadow: none;
+    background-color: #6A89A7;
+}
+
+input:not([type]),
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+textarea.materialize-textarea {
+    color: #434350;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #114683;
+    box-shadow: 0 1px 0 0 #114683;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type=date]:focus:not([readonly]) + label,
+input[type=datetime-local]:focus:not([readonly]) + label,
+input[type=datetime]:focus:not([readonly]) + label,
+input[type=email]:focus:not([readonly]) + label,
+input[type=number]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label,
+input[type=search]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
+input[type=text]:focus:not([readonly]) + label,
+input[type=time]:focus:not([readonly]) + label,
+input[type=url]:focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #114683;
 }
 
 .card {

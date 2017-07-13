@@ -5,23 +5,16 @@ import jsonData from 'json';
 
 export default class Nav extends Component {
     render() {
+        let brand = (<span><img {...jsonData.about.getAvatar()}/><span dangerouslySetInnerHTML={{
+            __html: jsonData.about.nameHTML
+        }}></span></span>);
         return (
-            <Navbar brand={jsonData.about.name} right className="row white p100">
+            <Navbar brand={brand} right className="row uppercase p100">
                 <li>
-                    <Scrollchor to="#about" animate={{
-                        offset: -3000,
-                        duration: 1300
-                    }}>Home</Scrollchor>
+                    <Scrollchor to="#whyus">Why us</Scrollchor>
                 </li>
                 <li>
-                    <Scrollchor to="#whyus" animate={{
-                        offset: -124
-                    }}>Why us</Scrollchor>
-                </li>
-                <li>
-                    <Scrollchor to="#testimonials" animate={{
-                        offset: -124
-                    }}>Testimonials</Scrollchor>
+                    <Scrollchor to="#testimonials">Testimonials</Scrollchor>
                 </li>
                 <li>
                     <Scrollchor to="#faq">FAQ</Scrollchor>

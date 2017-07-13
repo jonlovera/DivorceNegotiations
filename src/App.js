@@ -3,7 +3,6 @@ import Interactive from 'react-interactive';
 import {Switch, Route} from 'react-router-dom';
 import {HashLink as Link} from 'react-router-hash-link';
 
-import TopSection from 'components/TopSection';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
 
@@ -25,6 +24,20 @@ export default class App extends Component {
                 // bottom: $target.offset().top + $target.outerHeight() - $this.height()
             });
         });
+
+        let navColor = ()=>{
+            var wn = $(window).scrollTop();
+            if (wn > 10) {
+                $("nav").css("background", "rgba(67, 67, 80, 0.7)");
+            } else {
+                $("nav").css("background", "rgba(67, 67, 80, 0)");
+            }
+        }
+
+        $(window).on("scroll", function() {
+            navColor();
+        });
+        navColor();
 
         // Animations
         $.fn.extend({

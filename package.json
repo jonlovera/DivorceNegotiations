@@ -33,6 +33,7 @@
     "react-dom": "^15.5.4",
     "react-interactive": "^0.6.5",
     "react-materialize": "^1.0.1",
+    "react-responsive-carousel": "^3.1.24",
     "react-router-dom": "^4.1.1",
     "react-router-hash-link": "^1.1.0",
     "react-scrollchor": "^3.0.0",
