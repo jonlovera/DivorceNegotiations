@@ -11,8 +11,9 @@ export default class Testimonials extends Component {
             <Row className="background-primary">
                 <Col s={12} m={8} l={6} className="offset-m2 offset-l3">
                     <div className="center-align">
-                        <div className="box-title no-top">
+                        <div className="box-title no-border">
                             <span>Testimonials</span>
+                            <div className="border"></div>
                         </div>
                     </div>
                     <h5 className="color-gray" dangerouslySetInnerHTML={{

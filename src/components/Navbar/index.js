@@ -1,28 +1,76 @@
 import React, {Component, PropTypes} from 'react';
-import Scrollchor from 'react-scrollchor';
-import {Navbar} from 'react-materialize';
+import {Link} from 'react-scroll';
+import {Navbar, Col} from 'react-materialize';
 import jsonData from 'json';
 
 export default class Nav extends Component {
     render() {
-        let brand = (<span><img {...jsonData.about.getAvatar()}/><span dangerouslySetInnerHTML={{
-            __html: jsonData.about.nameHTML
-        }}></span></span>);
+        let brand = (
+                <span><img {...jsonData.about.getAvatar()}/>
+                    <span className="hide-on-med-and-down" dangerouslySetInnerHTML={{
+                        __html: jsonData.about.nameHTML
+                    }}></span>
+                </span>
+            ),
+            navbarList = jsonData.navbar.map((item, index) => {
+                return (
+                    <li key={index}>
+                        <Link activeClass="active" to={item.id} spy={true} smooth={true}>
+                            {item.title}
+                        </Link>
+                    </li>
+                )
+            }),
+            toggleIcon = `<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="DN---Mobile" transform="translate(-280.000000, -35.000000)" fill="#FFFFFF">
+                        <g id="Nav-bar">
+                            <g id="Group-11" transform="translate(280.000000, 35.000000)">
+                                <g id="Group-12">
+                                    <rect id="Rectangle-5" x="0" y="0" width="14" height="3"></rect>
+                                    <rect id="Rectangle-5" x="0" y="9" width="14" height="3"></rect>
+                                    <rect id="Rectangle-5" x="0" y="4.5" width="14" height="3"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>`;
+        // return (
+        //     <Navbar brand={brand} right className="uppercase">
+        //         <li>
+        //             <Scrollchor to="#whyus">Why us</Scrollchor>
+        //         </li>
+        //         <li>
+        //             <Scrollchor to="#testimonials">Testimonials</Scrollchor>
+        //         </li>
+        //         <li>
+        //             <Scrollchor to="#faq">FAQ</Scrollchor>
+        //         </li>
+        //         <li>
+        //             <Scrollchor to="#contact">Contact</Scrollchor>
+        //         </li>
+        //     </Navbar>
+        // )
         return (
-            <Navbar brand={brand} right className="row uppercase p100">
-                <li>
-                    <Scrollchor to="#whyus">Why us</Scrollchor>
-                </li>
-                <li>
-                    <Scrollchor to="#testimonials">Testimonials</Scrollchor>
-                </li>
-                <li>
-                    <Scrollchor to="#faq">FAQ</Scrollchor>
-                </li>
-                <li>
-                    <Scrollchor to="#contact">Contact</Scrollchor>
-                </li>
-            </Navbar>
+            <nav className="uppercase row">
+                <div className="nav-wrapper">
+                    <Col s={10} l={8} className="offset-s1 offset-l2">
+                        <a href="/" className="brand-logo">
+                            {brand}
+                        </a>
+                        <ul className="uppercase right hide-on-small-only">
+                            {navbarList}
+                        </ul>
+                        <ul id="nav-mobile" className="side-nav">
+                            {navbarList}
+                        </ul>
+                        <a className="button-collapse hide-on-med-and-up" href="#" data-activates="nav-mobile" dangerouslySetInnerHTML={{
+                            __html: toggleIcon
+                        }}></a>
+                    </Col>
+                </div>
+            </nav>
         )
     }
 }

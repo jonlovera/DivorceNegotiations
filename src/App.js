@@ -30,7 +30,7 @@ export default class App extends Component {
             if (wn > 10) {
                 $("nav").css("background", "rgba(67, 67, 80, 0.7)");
             } else {
-                $("nav").css("background", "rgba(67, 67, 80, 0)");
+                $("nav").css("background", "");
             }
         }
 
@@ -64,7 +64,8 @@ export default class App extends Component {
 
                     <div id="content">
                         <Switch>
-                            <Route exact path="/DivorceNegotiations" component={Home}/>
+                            <Route exact path="/" component={Home}/>
+                            // <Route exact path="/DivorceNegotiations" component={Home}/>
                             <Route component={PageNotFound}/>
                         </Switch>
                     </div>

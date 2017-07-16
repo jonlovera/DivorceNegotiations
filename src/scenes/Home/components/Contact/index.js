@@ -8,10 +8,11 @@ export default class Contact extends Component {
         let info = this.props.info;
         return (
             <Row className="no-margin">
-                <Col s={12} m={8} l={6} className="offset-m2 offset-l3">
+                <Col s={10} l={6} className="offset-s1 offset-l3">
                     <div className="center-align">
-                        <div className="box-title no-top">
+                        <div className="box-title no-border">
                             <span>Get in contact with us</span>
+                            <div className="border"></div>
                         </div>
                     </div>
                     <h5 className="color-gray" dangerouslySetInnerHTML={{

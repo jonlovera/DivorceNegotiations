@@ -13,14 +13,26 @@ export default class HomeCarousel extends Component {
             items = info.map((item, index) => {
                 return (
                     <div key={index}>
-                        <img src={item.image.src}/>
-                        <p className="legend">{item.description}</p>
+                        {/* <img src={item.image.src}/> */}
+                        <div style={{
+                            backgroundImage: `url(${item.image.src})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            width: '100%',
+                            height: '100%',
+                            position: 'absolute'
+                        }}/>
+
+                        {(item.description)
+                            ? <p className="legend">{item.description}</p>
+                            : null}
                     </div>
                 )
             });
 
         return (
-            <Carousel axis="horizontal" style={{height: "100%"}} showArrows={false} dynamicHeight autoPlay showStatus={false} showThumbs={false} stopOnHover={false}>
+            <Carousel axis="horizontal" interval={5500} transitionTime={700} showArrows={false} infiniteLoop dynamicHeight autoPlay showStatus={false} showThumbs={false} stopOnHover={false}>
                 {items}
             </Carousel>
         );

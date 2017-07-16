@@ -6,10 +6,25 @@ import {Row, Col, Button} from 'react-materialize';
 
 export default class About extends Component {
     render() {
-        let info = this.props.info;
+        let info = this.props.info,
+            profiles = info.profiles.map((profile, index) => {
+                return (
+                    <Col s={12} m={8} l={4} key={index} className="offset-m2 profile">
+                        <Col s={3} className="center-align" dangerouslySetInnerHTML={{
+                            __html: profile.icon
+                        }}></Col>
+                        <Col s={9} className="info">
+                            <span className="title">{profile.title}</span>
+                            <br/>
+                            <span className="color-gray light">{profile.description}</span>
+                        </Col>
+                    </Col>
+                )
+            });
+
         return (
             <Row>
-                <Col s={12} m={8} l={6} className="offset-m2 offset-l3">
+                <Col s={10} l={6} className="offset-s1 offset-l3">
                     <div className="center-align">
                         <div className="box-title bigger">
                             <span dangerouslySetInnerHTML={{
@@ -21,8 +36,16 @@ export default class About extends Component {
                         __html: info.description
                     }}></h5>
                 </Col>
-                <Col s={12} className="background-primary">
-                    Divorce profiles
+                <Col s={12} className="background-primary profiles">
+                    <Col s={10} l={8} className="offset-s1 offset-l2">
+                        <h4 className="SFNS-Display">Divorce profiles</h4>
+                    </Col>
+                    <Col s={10} l={8} className="offset-s1 offset-l2">
+                        {profiles}
+                    </Col>
+                    <Col s={10} l={8} className="offset-s1 offset-l2 color-gray lighter">
+                        For Volatile and Difficult profiles, we recommend to seek and/or continue with legal help.
+                    </Col>
                 </Col>
             </Row>
         )
