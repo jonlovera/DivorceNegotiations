@@ -30,7 +30,7 @@ export default function Home() {
                 <FAQ info={jsonData.FAQ} />
             </div>
             <div id="contact" className="background-primary">
-                <Contact info={jsonData.contact} />
+                <Contact />
             </div>
         </div>
     );

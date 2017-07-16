@@ -53,6 +53,7 @@ const webpack = require('webpack'),
                 '*.scss',
                 '*.css',
                 '*.png',
+                '*.gif',
                 '*.ejs'
             ],
 
@@ -98,6 +99,9 @@ module.exports = {
                     // use style-loader in development
                     fallback: "style-loader"
                 })
+            }, {
+                test: /\.gif$/,
+                loader: 'url-loader?limit=65000&mimetype=image/gif&name=img/[name].[ext]'
             }, {
                 test: /\.svg$/,
                 loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]'

@@ -375,6 +375,7 @@ nav .button-collapse {
     }
 }
 
+.brand-logo,
 nav .brand-logo,
 nav a,
 nav ul a {
@@ -386,6 +387,7 @@ nav ul a {
     letter-spacing: 2.4px;
 }
 
+.brand-logo,
 nav .brand-logo {
     text-transform: capitalize;
     font-family: 'Baskerville';
@@ -394,10 +396,12 @@ nav .brand-logo {
     margin-top: 12px;
 }
 
+.brand-logo span,
 nav .brand-logo span {
     display: inline-flex;
 }
 
+.brand-logo span span,
 nav .brand-logo span span {
     margin-left: 10px;
 }
@@ -451,27 +455,30 @@ section > div {
 .carousel.carousel-slider {
     top: initial;
     left: initial;
-    height: 591px;
+    height: 84vh;
+}
+.slick-slider{
+    margin-bottom: 46px
+}
+.slick-list{
+
+    margin-bottom: 50px;
+}
+.slick-dots {
+    position: initial;
 }
 
-.carousel .slide .legend {
-    -webkit-transition: initial;
-    -moz-transition: initial;
-    -ms-transition: initial;
-    -o-transition: initial;
-    transition: initial;
-    position: absolute;
-    bottom: 80px;
-    left: initial;
-    right: 0;
-    margin-left: initial;
-    width: 60%;
-    border-radius: 0;
-    background: rgba(0, 0, 0, .47);
-    color: #fff;
-    padding: 10px 160px 10px 20px;
-    font-size: 40px;
-    text-align: center;
+.slick-dots li {
+    margin: 0;
+}
+.slick-dots li button:before{
+    color: #9FA3A7;
+    opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #FCC60A;
+    font-size:10px;
     opacity: 1;
 }
 
@@ -491,12 +498,6 @@ section > div {
     background-color: #f0f0f0;
     margin-bottom: 80px;
 }
-@media only screen and (min-width: 601px) {
-    .contactForm {
-        padding: 40px 80px;
-        border-radius: 5px;
-    }
-}
 
 .contactForm .title {
     padding-bottom: 15px;
@@ -513,6 +514,44 @@ section > div {
     border-radius: 100px;
     height: 42px;
     letter-spacing: 0;
+}
+@media only screen and (min-width: 601px) {
+    .contactForm {
+        padding: 40px 80px;
+        border-radius: 5px;
+    }
+}
+
+.carousel .slide .legend {
+    -webkit-transition: initial;
+    -moz-transition: initial;
+    -ms-transition: initial;
+    -o-transition: initial;
+    transition: initial;
+    display: inline-block;
+    position: relative;
+    bottom: -50vh;
+    left: auto;
+    right: auto;
+    margin-left: initial;
+    width: 75%;
+    border-radius: 0;
+    background: rgba(0, 0, 0, .47);
+    color: #fff;
+    font-size: 160%;
+    text-align: center;
+    opacity: 1;
+}
+@media only screen and (min-width: 993px) {
+    .carousel .slide .legend {
+        position: absolute;
+        width: 60%;
+        bottom: 80px;
+        left: initial;
+        right: 0;
+        padding: 10px 160px 10px 20px;
+        font-size: 38px;
+    }
 }
 
 .btn-flat.disabled,
@@ -539,10 +578,12 @@ section > div {
     box-shadow: none;
     background-color: #6A89A7;
 }
-.input-field label:not(.label-icon).active{
+
+.input-field label:not(.label-icon).active {
 
     width: 100%;
 }
+
 input:not([type]).invalid + label:after,
 input:not([type]):focus.invalid + label:after,
 input[type=date].invalid + label:after,

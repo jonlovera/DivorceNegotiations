@@ -2,10 +2,11 @@ import React, {Component, PropTypes} from 'react';
 import {Row, Col, Button} from 'react-materialize';
 
 import ContactForm from './components/ContactForm';
+import jsonData from 'json';
 
 export default class Contact extends Component {
     render() {
-        let info = this.props.info;
+        let info = jsonData.contact;
         return (
             <Row className="no-margin">
                 <Col s={10} l={6} className="offset-s1 offset-l3">
@@ -19,15 +20,46 @@ export default class Contact extends Component {
                         __html: info.description
                     }}></h5>
                     <h5 className="color-gray center-align">
-                        Call us <b>{info.phoneBeautified}</b>
+                        Call us
+                        <b>{info.phoneBeautified}</b>
                         <br/>
                         Or
                         <br/>
                         Let us get in touch with you, just fill and send us your details below.
                     </h5>
-                    <ContactForm />
+                    <ContactForm/>
                 </Col>
-                <img {...info.getImage()} style={{width: "100%", height: "initial"}}/>
+                <Col className='row no-margin' style={{
+                    backgroundImage: `url(${info.getImage().src})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '100%',
+                    height: '80vh',
+                    position: 'relative'
+                }}>
+                    <div href="/" className="brand-logo col offset-s1 offset-l2" style={{
+                        position: 'absolute',
+                        top: '50%',
+                        height: '100px',
+                        marginTop: '-50px'/* account for padding and border if not using box-sizing: border-box; */
+                    }}>
+                        <span>
+                            <img {...jsonData.about.getAvatar()} height="60px" width="108.28px"/>
+                            <span style={{
+                                fontSize: "26px",
+                                lineHeight: "26px",
+                                marginTop: "4px"
+                            }} dangerouslySetInnerHTML={{
+                                __html: jsonData.about.nameHTML
+                            }}></span>
+                        </span>
+                    </div>
+                    {/*<img {...info.getImage()} style={{
+                        width: "100%",
+                        height: "initial"
+                    }}/>*/}
+                </Col>
             </Row>
         )
     }
