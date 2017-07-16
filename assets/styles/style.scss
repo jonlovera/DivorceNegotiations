@@ -457,13 +457,17 @@ section > div {
     left: initial;
     height: 84vh;
 }
-.slick-slider{
-    margin-bottom: 46px
+
+.slick-slider {
+    margin-bottom: 46px;
+    margin-top: 50px;
 }
-.slick-list{
+
+.slick-list {
 
     margin-bottom: 50px;
 }
+
 .slick-dots {
     position: initial;
 }
@@ -471,14 +475,15 @@ section > div {
 .slick-dots li {
     margin: 0;
 }
-.slick-dots li button:before{
+
+.slick-dots li button:before {
     color: #9FA3A7;
     opacity: 1;
 }
 
 .slick-dots li.slick-active button:before {
     color: #FCC60A;
-    font-size:10px;
+    font-size: 10px;
     opacity: 1;
 }
 
