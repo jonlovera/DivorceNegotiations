@@ -44,16 +44,16 @@ export default class ContactForm extends Component {
 
         switch (fieldName) {
             case 'firstName':
-                firstNameValid = value.length >= 6;
+                firstNameValid = value.match(/^[a-z ,.'-]+$/i);
                 fieldValidationErrors.firstName = firstNameValid
                     ? ''
-                    : 'First name is too short';
+                    : 'First name must not contain numbers';
                 break;
             case 'lastName':
-                lastNameValid = value.length >= 6;
+                lastNameValid = value.match(/^[a-z ,.'-]+$/i);
                 fieldValidationErrors.lastName = lastNameValid
                     ? ''
-                    : 'Last name is too short';
+                    : 'Last name must not contain numbers';
                 break;
             case 'phoneNumber':
                 phoneNumberValid = value.length >= 6;
