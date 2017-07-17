@@ -36,8 +36,8 @@ export default class Contact extends Component {
                 <div href="/" className="brand-logo col offset-s1 offset-l2" style={{
                     position: 'absolute',
                     height: '100px',
-                    bottom: '50vh',
-                    marginTop: '-50px'/* account for padding and border if not using box-sizing: border-box; */
+                    bottom: '50vh'
+                    // marginTop: '-50px'/* account for padding and border if not using box-sizing: border-box; */
                 }}>
                     <span>
                         <span dangerouslySetInnerHTML={{
