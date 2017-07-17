@@ -75,7 +75,9 @@ export default class Footer extends Component {
                 <div className="footer-copyright">
                     <Row className="full-w no-margin">
                         <Col s={10} m={5} l={4} className={"offset-s1 offset-m1 offset-l2" + logoClass}>
-                            <img {...jsonData.about.getAvatar()} height="31px" width="58px"/>
+                            <span dangerouslySetInnerHTML={{
+                                __html: jsonData.about.getAvatar
+                            }}/>
                         </Col>
                         <Col s={12} className="hide-on-med-and-up no-padding">
                             <div className="uppercase center-align">{navbarList}</div>

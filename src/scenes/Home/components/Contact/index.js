@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {Row, Col, Button} from 'react-materialize';
 
 import ContactForm from './components/ContactForm';
+import Carousel from '../Carousel';
 import jsonData from 'json';
 
 export default class Contact extends Component {
@@ -20,46 +21,37 @@ export default class Contact extends Component {
                         __html: info.description
                     }}></h5>
                     <h5 className="color-gray center-align">
-                        Call us
+                        Call us{" "}
                         <b>{info.phoneBeautified}</b>
                         <br/>
                         Or
                         <br/>
                         Let us get in touch with you, just fill and send us your details below.
                     </h5>
+                </Col>
+                <Col s={12} m={10} l={6} className="offset-m1 offset-l3">
                     <ContactForm/>
                 </Col>
-                <Col className='row no-margin' style={{
-                    backgroundImage: `url(${info.getImage().src})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    width: '100%',
-                    height: '80vh',
-                    position: 'relative'
+                <Carousel info={info.carousel} backgroundPosition="bottom center"/>
+                <div href="/" className="brand-logo col offset-s1 offset-l2" style={{
+                    position: 'absolute',
+                    height: '100px',
+                    bottom: '50vh',
+                    marginTop: '-50px'/* account for padding and border if not using box-sizing: border-box; */
                 }}>
-                    <div href="/" className="brand-logo col offset-s1 offset-l2" style={{
-                        position: 'absolute',
-                        top: '50%',
-                        height: '100px',
-                        marginTop: '-50px'/* account for padding and border if not using box-sizing: border-box; */
-                    }}>
-                        <span>
-                            <img {...jsonData.about.getAvatar()} height="60px" width="108.28px"/>
-                            <span style={{
-                                fontSize: "26px",
-                                lineHeight: "26px",
-                                marginTop: "4px"
-                            }} dangerouslySetInnerHTML={{
-                                __html: jsonData.about.nameHTML
-                            }}></span>
-                        </span>
-                    </div>
-                    {/*<img {...info.getImage()} style={{
-                        width: "100%",
-                        height: "initial"
-                    }}/>*/}
-                </Col>
+                    <span>
+                        <span dangerouslySetInnerHTML={{
+                            __html: jsonData.about.getAvatarBigger
+                        }}/>
+                        <span style={{
+                            fontSize: "30px",
+                            lineHeight: "30px",
+                            marginTop: "14px"
+                        }} dangerouslySetInnerHTML={{
+                            __html: jsonData.about.nameHTML
+                        }}></span>
+                    </span>
+                </div>
             </Row>
         )
     }

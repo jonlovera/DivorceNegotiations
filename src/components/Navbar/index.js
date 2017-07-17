@@ -6,7 +6,10 @@ import jsonData from 'json';
 export default class Nav extends Component {
     render() {
         let brand = (
-                <span><img {...jsonData.about.getAvatar()}/>
+                <span>
+                    <span dangerouslySetInnerHTML={{
+                        __html: jsonData.about.getAvatar
+                    }}/>
                     <span className="hide-on-med-and-down" dangerouslySetInnerHTML={{
                         __html: jsonData.about.nameHTML
                     }}></span>

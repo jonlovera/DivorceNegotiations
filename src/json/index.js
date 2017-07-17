@@ -18,12 +18,37 @@ let info = {
     }],
     about: {
         logo: logo,
-        getAvatar: () => {
-            let a = logo;
-            delete a.toString;
-            delete a.images;
-            return a;
-        },
+        getAvatar: `<svg width="74px" height="41px" viewBox="0 0 74 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="DN---Tablet" transform="translate(-33.000000, -23.000000)" fill="#FEFEFE">
+                                <g id="Nav-" transform="translate(2.000000, 0.000000)">
+                                    <g id="Logo" transform="translate(31.000000, 23.000000)">
+                                        <path d="M13.749059,30.9836374 C13.6532114,30.2172372 13.6052876,28.5079103 13.6052876,25.854204 L13.6052876,7.9117206 C14.6039352,7.84416114 15.5898971,7.81219753 16.5638781,7.81219753 C18.5872495,7.81219753 20.2476686,8.01197011 21.5402019,8.41660039 C22.8341448,8.81832489 24.0132114,9.57673424 25.0752876,10.6940078 C26.1380686,11.809102 26.9562971,13.2590877 27.52504,15.0410591 C28.0937829,16.8230305 28.380621,18.8490877 28.380621,21.1206836 C28.380621,24.0380897 27.8901067,26.4389929 26.9104876,28.3197609 C25.9308686,30.2012554 24.7109257,31.4609123 23.2499543,32.1030903 C21.7903924,32.7423626 19.9270019,33.0634516 17.6597829,33.0634516 C16.1086019,33.0634516 15.0937448,32.9065393 14.6138019,32.5977999 C14.133859,32.2868811 13.8456114,31.7478583 13.749059,30.9836374 M22.0398781,33.7862651 C23.2309257,33.647514 24.4896305,33.2966407 25.8152876,32.736551 C27.1409448,32.174282 28.3052114,31.3563041 29.3123162,30.2804379 C30.319421,29.2031189 31.1087543,27.8504769 31.6845448,26.2203327 C32.2617448,24.5887355 32.5499924,22.7907823 32.5499924,20.8242937 C32.5499924,18.1030279 32.021421,15.7043041 30.9649829,13.6252164 C29.90784,11.5454022 28.2981638,9.89782326 26.1317257,8.68393242 C23.9666971,7.46786225 20.951021,6.86128005 17.0825829,6.86128005 C15.8400876,6.86128005 13.432621,6.95281222 9.85877333,7.13878233 L5.57382095,7.35671605 L5.57382095,8.26767901 L6.34201143,8.26767901 C7.66203048,8.26767901 8.51549714,8.38245744 8.90804952,8.61492008 C9.29989714,8.84375049 9.55361143,9.27380637 9.67624,9.90145549 C9.79957333,10.5276517 9.85877333,11.9122573 9.85877333,14.0509136 L9.85877333,27.0034412 C9.85877333,29.2467057 9.79957333,30.6770773 9.67624,31.290924 C9.55361143,31.9047706 9.28016381,32.3558934 8.85025905,32.6471982 C8.41964952,32.9363236 7.64934476,33.0830656 6.53511619,33.0830656 L5.45824,33.0830656 L5.45824,33.9940286 L17.0057638,33.9940286 C19.1707924,33.9940286 20.8488305,33.9242898 22.0398781,33.7862651" id="Fill-1"></path>
+                                        <g id="Group-5" transform="translate(0.000000, 0.150374)">
+                                            <path d="M69.1616686,9.18714139 C68.5083543,9.18714139 67.8959162,9.37093216 67.325059,9.74141949 C66.7563162,10.1097275 66.3679924,10.5833701 66.1643162,11.1572622 C65.9592305,11.7318808 65.8577448,12.5658405 65.8577448,13.6627736 L65.8577448,34.2793038 L63.397421,34.2793038 L46.5092114,14.6333051 L46.5092114,26.9712596 C46.5092114,28.9522772 46.8573638,30.2250101 47.5543733,30.7938172 C48.2534971,31.3597184 49.1471352,31.6452116 50.2366971,31.6452116 L50.2366971,33.8434364 L40.457421,33.8434364 L40.457421,31.6452116 C41.2883352,31.6452116 42.0135352,31.4374481 42.6280876,31.0219211 C43.2433448,30.6056677 43.6323733,30.1225813 43.8008114,29.5755676 C43.9657257,29.0271011 44.0495924,28.1655365 44.0495924,26.9916001 L44.0495924,13.2864747 C44.0495924,10.5535858 42.8063924,9.18714139 40.3221067,9.18714139 L40.3221067,6.98891657 L49.1217638,6.98891657 L63.397421,23.4269309 L63.397421,13.583591 C63.397421,10.6523825 62.198621,9.18714139 59.8052495,9.18714139 L59.8052495,6.98891657 L69.1616686,6.98891657 L69.1616686,9.18714139 Z M36.7982971,2.14134412 L36.7982971,39.2285787 L1.40938286,39.2285787 L1.40938286,2.02874503 L36.8201448,2.02874503 C36.8081638,2.06434087 36.7982971,2.1013896 36.7982971,2.14134412 L36.7982971,2.14134412 Z M1.01401143,0.575853541 C0.455135238,0.575853541 -0.000140952381,1.04513749 -0.000140952381,1.62193541 L-0.000140952381,39.6353883 C-0.000140952381,40.2121862 0.455135238,40.6814702 1.01401143,40.6814702 L72.5825829,40.6814702 C73.1421638,40.6814702 73.59744,40.2121862 73.59744,39.6353883 L73.59744,1.62193541 C73.59744,1.04513749 73.1421638,0.575853541 72.5825829,0.575853541 L1.01401143,0.575853541 Z" id="Fill-3"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+        `,
+        getAvatarBigger: `<svg width="126px" height="85px" viewBox="0 0 159 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="DN---Tablet" transform="translate(-54.000000, -8959.000000)" fill="#FFFFFF">
+                                    <g id="Footer---banner" transform="translate(-3.000000, 8718.000000)">
+                                        <g id="Group-9" transform="translate(57.000000, 241.000000)">
+                                            <g id="Page-1">
+                                                <path d="M3.03100775,81.4450371 L155.231547,81.4450371 L155.231547,3.06144068 L3.03100775,3.06144068 L3.03100775,81.4450371 Z M156.080229,84.5064778 L2.18081008,84.5064778 C0.979015504,84.5064778 0,83.5176324 0,82.3022405 L0,2.20270657 C0,0.987314619 0.979015504,0 2.18081008,0 L156.080229,0 C157.283539,0 158.262554,0.987314619 158.262554,2.20270657 L158.262554,82.3022405 C158.262554,83.5176324 157.283539,84.5064778 156.080229,84.5064778 L156.080229,84.5064778 Z" id="Fill-40"></path>
+                                                <path d="M29.2566508,15.1394364 L29.2566508,52.9482288 C29.2566508,58.5399502 29.359705,62.1417352 29.5658136,63.7566451 C29.7734376,65.3669629 30.3932787,66.5027574 31.4268523,67.156375 C32.4589105,67.8084619 34.641236,68.1375667 37.9738291,68.1375667 C42.8507205,68.1375667 46.8561973,67.4625191 49.9978368,66.1139544 C53.1379609,64.7623284 55.7597826,62.1080593 57.8678484,58.1434936 C59.9759143,54.178928 61.0291895,49.121428 61.0291895,42.9740551 C61.0291895,38.1874926 60.413895,33.9183136 59.1908833,30.1619258 C57.9663562,26.4070689 56.2068562,23.3517511 53.9214764,21.0036261 C51.637612,18.6493782 49.1006585,17.0513061 46.3212244,16.2032871 C43.5402748,15.3522066 39.9697477,14.9312585 35.618736,14.9312585 C33.5243097,14.9312585 31.4056353,14.9986102 29.2566508,15.1394364 L29.2566508,15.1394364 Z M11.9859686,13.9714968 L21.2002322,13.5122807 C28.8853523,13.1204163 34.0623136,12.9275456 36.7356624,12.9275456 C45.0527477,12.9275456 51.5375888,14.205697 56.1947322,16.7665922 C60.8518756,19.3259566 64.3132864,22.7976303 66.5865422,27.1785519 C68.8582826,31.5610042 69.9949105,36.6139121 69.9949105,42.3479905 C69.9949105,46.4916504 69.3750694,50.281714 68.1338717,53.7197119 C66.895705,57.1546483 65.1983407,60.0048496 63.0326857,62.2749078 C60.8670306,64.5403739 58.3634182,66.263965 55.5127554,67.4487426 C52.6620926,68.6304587 49.9554027,69.3697966 47.3942012,69.6606335 C44.8329996,69.9530011 41.2245849,70.0999502 36.568957,70.0999502 L11.737426,70.0999502 L11.737426,68.1788962 L14.0531159,68.1788962 C16.4491275,68.1788962 18.1055733,67.8712214 19.0315461,67.2619947 C19.9560035,66.6481758 20.5425035,65.6960678 20.8077167,64.4026091 C21.0729298,63.1091504 21.2002322,60.0966928 21.2002322,55.3682977 L21.2002322,28.0770847 C21.2002322,23.5691133 21.0729298,20.6530911 20.8077167,19.3336102 C20.5425035,18.0110678 19.9984376,17.1048814 19.1543019,16.6211737 C18.3116818,16.1328739 16.4764066,15.8910201 13.6393833,15.8910201 L11.9859686,15.8910201 L11.9859686,13.9714968 Z" id="Fill-42"></path>
+                                                <path d="M148.723973,18.1440874 C147.319101,18.1440874 146.000612,18.5328904 144.77457,19.3135577 C143.551558,20.0896329 142.716516,21.0861319 142.278535,22.2969317 C141.836008,23.5062007 141.617775,25.2634677 141.617775,27.5763861 L141.617775,71.0182293 L136.328667,71.0182293 L100.011132,29.6214285 L100.011132,55.6191827 C100.011132,59.7919264 100.761306,62.4752791 102.26014,63.6723024 C103.763519,64.8662643 105.685178,65.4678374 108.026632,65.4678374 L108.026632,70.0997971 L86.9990155,70.0997971 L86.9990155,65.4678374 C88.7873101,65.4678374 90.3452481,65.0285207 91.6667674,64.1529486 C92.9898023,63.2758459 93.8263605,62.2579168 94.1870504,61.1068151 C94.5416783,59.9511213 94.7235388,58.1341563 94.7235388,55.6605122 L94.7235388,26.783473 C94.7235388,21.0233724 92.0501899,18.1440874 86.7080388,18.1440874 L86.7080388,13.5121276 L105.63062,13.5121276 L136.328667,48.1492675 L136.328667,27.4080069 C136.328667,21.233081 133.750795,18.1440874 128.604143,18.1440874 L128.604143,13.5121276 L148.723973,13.5121276 L148.723973,18.1440874 Z M156.080229,2.6256446 L79.7973411,2.6256446 C79.4290736,2.6256446 79.1305194,2.9271965 79.1305194,3.29763083 L79.1305194,82.3026997 C79.1305194,82.6746647 79.4290736,82.9762166 79.7973411,82.9762166 L156.080229,82.9762166 C156.450012,82.9762166 156.74705,82.6746647 156.74705,82.3026997 L156.74705,3.29763083 C156.74705,2.9271965 156.450012,2.6256446 156.080229,2.6256446 L156.080229,2.6256446 Z" id="Fill-43"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+        `,
         name: "Divorce Negotiations",
         nameHTML: "Divorce <br />Negotiations",
         description: `Divorce Negotiations aims to provide couples who have decided to split with an affordable, valuable and sensible methodology to settle property and financial matters without undertaking expensive and lengthy legal engagements.  Discussions can also extend to custody matters.
@@ -38,24 +63,22 @@ let info = {
             title: "Simple",
             description: "Mum, dad, kids, cars, property and superannuation (non-complicated asset portfolio)",
             icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g id="DN---Desktop-" transform="translate(-250.000000, -2614.000000)">
-                            <g id="Divorce-Profiles" transform="translate(-11.000000, 2481.000000)">
-                                <g id="Group-4" stroke-width="2" stroke="#FCC60A">
-                                    <g id="1" transform="translate(262.000000, 114.000000)">
+                        <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="DN---Tablet" transform="translate(-234.000000, -2633.000000)">
+                                <g id="Divorce-profiles" transform="translate(0.000000, 2500.000000)">
+                                    <g id="Simple" transform="translate(235.000000, 114.000000)">
                                         <g id="Number" transform="translate(0.000000, 20.000000)">
-                                            <circle id="Oval" cx="20" cy="20" r="20"></circle>
+                                            <circle id="Oval" stroke="#FCC60A" stroke-width="2" cx="20" cy="20" r="20"></circle>
+                                            <g id="Group-4" transform="translate(19.598868, 19.797174) rotate(37.000000) translate(-19.598868, -19.797174) translate(12.098868, 5.297174)" fill="#FCC60A">
+                                                <polygon id="Rectangle-12" points="0.641514722 22.5212591 14.2176824 23.0799775 14.2176824 28.0799775 0.641514722 27.5212591"></polygon>
+                                                <polygon id="Rectangle-12" transform="translate(11.688710, 13.631934) rotate(-90.000000) translate(-11.688710, -13.631934) " points="-1.81071304 10.9614266 25.188134 11.302441 25.188134 16.302441 -1.81071304 15.9614266"></polygon>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
-                                <g id="Group-4" transform="translate(277.000000, 153.500000) rotate(37.000000) translate(-277.000000, -153.500000) translate(270.000000, 139.000000)" fill="#FCC60A">
-                                    <polygon id="Rectangle-12" points="1.70530257e-13 23 13.5761677 23.5587184 13.5761677 28.5587184 1.70530257e-13 28"></polygon>
-                                    <polygon id="Rectangle-12" transform="translate(11.047196, 14.110675) rotate(-90.000000) translate(-11.047196, -14.110675) " points="-2.45222776 11.4401675 24.5466193 11.7811819 24.5466193 16.7811819 -2.45222776 16.4401675"></polygon>
-                                </g>
                             </g>
                         </g>
-                    </g>
-                </svg>`
+                    </svg>`
         }, {
             title: "Volitile",
             description: "Where there is domestic violence or child abuse",
@@ -106,16 +129,16 @@ let info = {
                 </svg>`
         }]
     },
-    carousel: [{
-        image: "carousel1.jpg",
-        description: ""
-    }, {
-        image: "carousel2.jpg",
+    carousel: {
+        items: [{
+            image: "carousel1.jpg",
+        }, {
+            image: "carousel2.jpg",
+        }, {
+            image: "carousel3.jpg",
+        }],
         description: "\"Sometimes when things are falling apart the may actually fall into place\""
-    }, {
-        image: "carousel3.jpg",
-        description: ""
-    }],
+    },
     whyUs: {
         getImage: () => {
             let a = whyUsImage;
@@ -143,14 +166,21 @@ let info = {
         answer: "If you have complicated financial assets, issues of violence or child abuse Divorce Negotiations is not for you.  If you decide to consult a lawyer our advice is to use a Family Court Specialists (lawyers who only work on family court matters).",
     }],
     contact: {
+        carousel: {
+            items: [{
+                image: "contactCarousel/carousel1.jpg",
+            }, {
+                image: "contactCarousel/carousel2.jpg",
+            }]
+        },
         getImage: () => {
             let a = beachImage;
             delete a.toString;
             delete a.images;
             return a;
         },
-        phone: "+6139877653",
-        phoneBeautified: "03 987 7653",
+        phone: "+61408200401",
+        phoneBeautified: "+61 408 200 401",
         description: "Firstly, contact our office for an initial discussion which is free.  The aim of the initial call is to determine if you we can help you (i.e.: if your desire for a successful outcome outweighs your negative feelings towards your ex-partner then there is a high degree chance of a successful outcome).  If we don’t believe we can help you we have no interest in wasting your time or money and we will explain why. <br/><br/>One of the most common reason why we may not be able to help you is if one of the parties has no interest in settling or they want their day in court.  Don’t despair because in some of these cases it may be an option to come back to us later once some of the emotions have settled down (or when the bank balance has received a significant battering). <br/><br/>If we believe we can help you the next step is to complete a quick form outlining the assets, liabilities and your desired outcome.  One of our team will then have a call with both parties individually and then we can make a decision whether to proceed with a formal negotiation session.  If we decide to proceed an appointment is set and at this point payment will be due. "
     }
 }
@@ -158,11 +188,22 @@ let info = {
 // Let webpack compile all carousel images
 // and then substitute each avatar on each carousel
 // with the hash of the new compiled image
-info.carousel.map((item, index) => {
+info.carousel.items.map((item, index) => {
     if (item.image) {
         let carouselAvatar = require(`responsive-loader?placeholder=true&name=./img/carousel/[hash].&sizes[]=1200&!img/carousel/${item.image}`);
         item.image = carouselAvatar;
-        info.carousel[index] = item;
+        info.carousel.items[index] = item;
+    }
+});
+
+// Let webpack compile all carousel images
+// and then substitute each avatar on each carousel
+// with the hash of the new compiled image
+info.contact.carousel.items.map((item, index) => {
+    if (item.image) {
+        let carouselAvatar = require(`responsive-loader?placeholder=true&name=./img/carousel/[hash].&sizes[]=1200&!img/carousel/${item.image}`);
+        item.image = carouselAvatar;
+        info.contact.carousel.items[index] = item;
     }
 });
 

@@ -289,10 +289,11 @@ a.black-text:hover {
 
 nav {
     z-index: 99999;
-    background: -webkit-linear-gradient(bottom, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
-    background: -o-linear-gradient(top, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
-    background: -moz-linear-gradient(top, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
-    background: linear-gradient(to top, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
+    // background: -webkit-linear-gradient(bottom, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
+    // background: -o-linear-gradient(top, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
+    // background: -moz-linear-gradient(top, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
+    // background: linear-gradient(to top, rgba(255,0,0,0), rgba(67, 67, 80, 0.7));
+    background: transparent;
     box-shadow: none;
     -webkit-transition: background-color 0.4s linear;
     -ms-transition: background-color 0.4s linear;
@@ -313,6 +314,7 @@ nav a.button-collapse,
 nav a.button-collapse i {
     height: 64px;
     line-height: 66px;
+    margin-right: 10px;
 }
 
 nav .button-collapse {
@@ -513,6 +515,7 @@ section > div {
 
 .contactForm button {
     font-size: 16px;
+    font-family: "SF NS Text";
     font: icon;
     box-shadow: none;
     background-color: #114683;
@@ -520,6 +523,7 @@ section > div {
     height: 42px;
     letter-spacing: 0;
 }
+
 @media only screen and (min-width: 601px) {
     .contactForm {
         padding: 40px 80px;
@@ -527,18 +531,18 @@ section > div {
     }
 }
 
-.carousel .slide .legend {
+.legend {
     -webkit-transition: initial;
     -moz-transition: initial;
     -ms-transition: initial;
     -o-transition: initial;
     transition: initial;
-    display: inline-block;
-    position: relative;
-    bottom: -50vh;
-    left: auto;
-    right: auto;
-    margin-left: initial;
+    display: block;
+    position: absolute;
+    top: 48vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     width: 75%;
     border-radius: 0;
     background: rgba(0, 0, 0, .47);
@@ -548,10 +552,12 @@ section > div {
     opacity: 1;
 }
 @media only screen and (min-width: 993px) {
-    .carousel .slide .legend {
+    .legend {
         position: absolute;
-        width: 60%;
-        bottom: 80px;
+        /* width: 60%; */
+        height: auto;
+        top: 48vh;
+        bottom: inherit;
         left: initial;
         right: 0;
         padding: 10px 160px 10px 20px;
