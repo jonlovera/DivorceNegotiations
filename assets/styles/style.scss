@@ -314,7 +314,7 @@ nav a.button-collapse,
 nav a.button-collapse i {
     height: 64px;
     line-height: 66px;
-    margin-right: 10px;
+    margin-right: 0;
 }
 
 nav .button-collapse {
@@ -403,8 +403,8 @@ nav .brand-logo span {
     display: inline-flex;
 }
 
-.brand-logo span span,
-nav .brand-logo span span {
+.brand-logo span span:nth-last-child(1),
+nav .brand-logo span span:nth-last-child(1) {
     margin-left: 10px;
 }
 
@@ -504,6 +504,38 @@ section > div {
     padding: 40px 20px;
     background-color: #f0f0f0;
     margin-bottom: 80px;
+    color: #434350;
+
+}
+
+.contactForm .message {
+    background: #f0f0f0;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+.contactForm .message > div {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fade-enter {
+    opacity: 0.01;
+    transition: opacity 0.8s ease-in;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+}
+
+.fade-leave {
+    opacity: 1;
+    transition: opacity 0.8s ease-in;
+}
+
+.fade-leave.thing-leave-active {
+    opacity: 0.01;
 }
 
 .contactForm .title {
@@ -513,7 +545,8 @@ section > div {
     letter-spacing: 2.8px;
 }
 
-.contactForm button {
+.contactForm button,
+.contactForm button:focus {
     font-size: 15px;
     font-family: "SF NS Text";
     box-shadow: none;
@@ -522,7 +555,6 @@ section > div {
     height: 42px;
     letter-spacing: 0;
 }
-
 @media only screen and (min-width: 601px) {
     .contactForm {
         padding: 40px 80px;
@@ -555,12 +587,12 @@ section > div {
         position: absolute;
         /* width: 60%; */
         height: auto;
-        top: 48vh;
+        top: 45vh;
         bottom: inherit;
         left: initial;
         right: 0;
         padding: 10px 160px 10px 20px;
-        font-size: 38px;
+        font-size: 36px;
     }
 }
 

@@ -13,7 +13,7 @@ export default class Testimonials extends Component {
             testimonials = info.map((testimonial, index) => {
                 return (
                     <div key={index}>
-                        <div style={{
+                        <div className="center-align" style={{
                             margin: "0 45px",
                             padding: "40px 20px",
                             borderTop: "2px solid #fcc60a",
@@ -22,7 +22,9 @@ export default class Testimonials extends Component {
                             <span className="color-gray lighter">{'"' + testimonial.description + '"'}</span>
                             <br/>
                             <br/>
-                            <span>{testimonial.name}</span>
+                            <span dangerouslySetInnerHTML={{
+                                __html: testimonial.name
+                            }}/>
                         </div>
                     </div>
                 );
@@ -32,8 +34,9 @@ export default class Testimonials extends Component {
                 infinite: true,
                 speed: 500,
                 arrows: false,
-                centerPadding: 220,
                 pauseOnHover: false,
+                autoplay: true,
+                autoplaySpeed: 10500,
                 responsive: [
                     {
                         breakpoint: 601,
@@ -45,13 +48,14 @@ export default class Testimonials extends Component {
                         breakpoint: 100000,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2}
+                            slidesToScroll: 2
+                        }
                     }
                 ]
             };
         return (
             <Row className="background-primary">
-                <Col s={12} m={10} l={6} className="offset-m1 offset-l3">
+                <Col s={12} m={10} l={8} className="offset-m1 offset-l2">
                     <div className="center-align">
                         <div className="box-title no-border">
                             <span>Testimonials</span>

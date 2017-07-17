@@ -21,8 +21,10 @@ export default class Contact extends Component {
                         __html: info.description
                     }}></h5>
                     <h5 className="color-gray center-align">
-                        Call us{" "}
-                        <b>{info.phoneBeautified}</b>
+                        Call us {" "}&nbsp;
+                        <a href={"tel://" + info.phone} className="color-gray">
+                            <b>{" "+info.phoneBeautified}</b>
+                        </a>
                         <br/>
                         Or
                         <br/>
@@ -37,19 +39,22 @@ export default class Contact extends Component {
                 }}>
                     <Carousel info={info.carousel} backgroundPosition="bottom center"/>
                     <div href="/" className="brand-logo col offset-s1 offset-l2" style={{
-                        // left: '50%',
                         top: '50%',
                         transform: "translate(0, -50%)",
-                        position: 'absolute' // position: 'absolute', // height: '100px', // bottom: '50vh' // marginTop: '-50px'/* account for padding and border if not using box-sizing: border-box; */
-                     }}>
+                        position: 'absolute'
+                    }}>
                         <span>
-                            <span dangerouslySetInnerHTML={{
+                            <span style={{
+                                WebkitFilter: "drop-shadow(1px 1px 2px rgba(33, 33, 33, 0.44)",
+                                filter: "drop-shadow(1px 1px 2px rgba(33, 33, 33, 0.44)"
+                            }} dangerouslySetInnerHTML={{
                                 __html: jsonData.about.getAvatarBigger
                             }}/>
                             <span style={{
                                 fontSize: "30px",
                                 lineHeight: "30px",
-                                marginTop: "14px"
+                                marginTop: "14px",
+                                textShadow: "1px 1px 2px rgba(33, 33, 33, 0.44)"
                             }} dangerouslySetInnerHTML={{
                                 __html: jsonData.about.nameHTML
                             }}></span>

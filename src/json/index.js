@@ -57,7 +57,8 @@ let info = {
         <br /><br />Divorce Negotiations concentrates on cases that fall into the ‘Simple profile’ and by doing this we believe we can help free up the lawyers to focus on the cases that need their skills; namely cases which fall into the Complicated and/or Volatile profiles.
         <br /><br />Having spoken to many people who have divorced using lawyers and attended court they were very disappointment with their decision to engaged lawyers and/or proceed to court.  None of them believed it was value for money and all of them were highly critical of the process.
         <br /><br />We have more than 20 years’ negotiating experience and truly understand the emotional drain divorce can place on individuals.  We will take time to outline the alternative path and we believe once people understand what the lawyer/court process involves they will be very eager to reach an agreement.
-        <br /><br />It is very important to understand that we are not lawyers and do not offer any legal advice but that is our competitive advantage because we are focused on getting an immediate result rather than dragging the process out for years. <br />Think of Divorce Negotiations as the Uber of the divorce industry.  For 40 years the legal profession has controlled all the answers and the process.  Divorce Negotiations is empowering people to arrive at a successful outcome without the expense and the pain that has been felt by people who proceed to court.
+        <br /><br />It is very important to understand that we are not lawyers and do not offer any legal advice but that is our competitive advantage because we are focused on getting an immediate result rather than dragging the process out for years.
+        <br /><br />Think of Divorce Negotiations as the Uber of the divorce industry.  For 40 years the legal profession has controlled all the answers and the process.  Divorce Negotiations is empowering people to arrive at a successful outcome without the expense and the pain that has been felt by people who proceed to court.
         <br /><br />Put simply, we help people understand the opportunity cost of delay. We believe a high percentages of <b>divorces fall into the following profiles:</b> `,
         profiles: [{
             title: "Simple",
@@ -137,7 +138,7 @@ let info = {
         }, {
             image: "carousel3.jpg",
         }],
-        description: "\"Sometimes when things are falling apart the may actually fall into place\""
+        description: "\"Sometimes when things are falling apart they may actually fall into place\""
     },
     whyUs: {
         getImage: () => {
@@ -149,11 +150,17 @@ let info = {
         description: "The traditional method for trying to settle a divorce is to engage lawyers and go through mediation.  Lawyers by nature are not negotiators but most of us think they are.  Lawyers send letters to each other outlining a position and their instructions.  It’s not until you get into the process that you truly understand how expensive this is.  The person who is sending the letter needs to discuss the contents with their lawyer and this time is chargeable and then you are charged by the page to have the letter typed and sent.  At the receiving end the other person is charged per page to have the letter read and then the same process is followed to have the reply drafted and sent back.  This process is followed back and forth for months and in a lot of cases years.  Then comes mediation. <br/><br/>At some point the lawyers will suggest you attend mediation (I hear you say you thought this was what you paid the lawyer for).  In order to attend mediation the mediator needs an outline of the situation:- assets, liabilities and desired outcomes etc.  This is prepared by the lawyers and at this point you need to start thinking of the time you spend agreeing on the contents and the costs of typing this up in the mediators desired format (no kidding this will be the same information you have already supplied in some form but it now needs to be typed up in a different format – think more money). <br/><br/>Mediators will sit both parties down and talk through what each party wants (having received letters outlining this previously you sit there wondering why you are there because you already know what the other party wants).  The most frustrating part of this is mediators will not make recommendations or tell you the probable outcome of court but will repeat (over and over) what the other party wants as if you are not in the room when they state it).   The mediator can cost in excess of $5,000 and by the time you have paid your individual lawyers to prepare the necessary documents the whole exercise can cost $10K.  The crazy part of this is that if you end up starting court proceedings you will be required to attend mediation numerous times. <br/><br/>The difference we offer is that we are negotiators.  We will identify the gaps and try to close them by making both parties understand the cost of not agreeing.  Often people may only be 5%-10% apart but once you understand the cost of not agreeing this percentage becomes insignificant.   In other words, we help people understand the opportunity costs of delay.",
     },
     testimonials: [{
-        name: "Melissa from Castle Hill",
+        name: "<br/>Melissa from Castle Hill",
         description: "I used a lawyer for 4 years. It was a complete waste of time and money. I wish I had of known about Divorce Negotiations.",
     }, {
         name: "Brendan from Pymble",
         description: "I had no idea how little power my lawyer had.  No one can make the other person do anything except the Judge at the end.  A complete waste of time.",
+    }, {
+        name: "Casey from Sydney",
+        description: "I thought my lawyer was on my side.  They were always telling me to fight on right up until the time I told them I had no more money at which point they completely dropped me.  I had to settle for about half of what I was originally offered. A complete waste of money and time.",
+    }, {
+        name: "Kate from Bondi",
+        description: "My lawyer kept telling me I had a really strong case.  It dragged on for three and half years, cost so much money and when we got to the court day the Barrister (who I had paid up front) told me I needed to settle.   I felt so used.  I wished I had of used Divorce Negotiations.",
     }],
     FAQ: [{
         question: "What is the difference between mediators and Divorce Negotiations?",

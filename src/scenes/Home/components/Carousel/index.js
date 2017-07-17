@@ -31,7 +31,7 @@ export default class HomeCarousel extends Component {
 
         return (
             <div>
-                <Carousel axis="horizontal" interval={5500} transitionTime={700} showArrows={false} infiniteLoop dynamicHeight autoPlay showStatus={false} showThumbs={false} stopOnHover={false}>
+                <Carousel axis="horizontal" interval={7500} transitionTime={700} showArrows={false} infiniteLoop dynamicHeight autoPlay showStatus={false} showThumbs={false} stopOnHover={false}>
                     {items}
                 </Carousel>
                 {(info.description)
