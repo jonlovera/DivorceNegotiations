@@ -25,7 +25,7 @@ export default class App extends Component {
             });
         });
 
-        let navColor = ()=>{
+        let navColor = () => {
             var wn = $(window).scrollTop();
             if (wn > 10) {
                 $("nav").css("background", "rgba(67, 67, 80, 0.7)");
@@ -53,7 +53,7 @@ export default class App extends Component {
             }
         });
 
-        $(".button-collapse").sideNav({closeOnClick: true});
+        $(".button-collapse").sideNav({closeOnClick: true, edge: 'right'});
     }
 
     render() {

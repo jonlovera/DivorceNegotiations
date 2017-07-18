@@ -44,7 +44,7 @@ export default class About extends Component {
                         {profiles}
                     </Col>
                     <Col s={10} l={8} className="offset-s1 offset-l2 color-gray lighter">
-                        For Volatile and Difficult profiles, we recommend to seek and/or continue with legal help.
+                        For Volatile and Difficult profiles, we recommend you seek legal advise.
                     </Col>
                 </Col>
             </Row>

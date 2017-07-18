@@ -120,19 +120,19 @@ export default class ContactForm extends Component {
 
         $.ajax({
             type: 'POST',
-            url: "email.php",
+            url: "/php/sendMail.php",
             data: {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 email: this.state.email,
-                phoneNumber: this.state.phoneNumber
+                phoneNumber: this.state.phoneNumber,
+                url: ''
             },
             dataType: "text",
-            success: function(resultData) {
+            success: (resultData) => {
                 this.setState({formSubmitted: true});
             },
             error: (err) => {
-                this.setState({formSubmitted: true});
                 console.log("err!", err.status);
             }
         });

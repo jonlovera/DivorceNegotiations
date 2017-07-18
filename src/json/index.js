@@ -1,6 +1,7 @@
 let logo = require('responsive-loader?name=./img/[hash].&sizes[]=300!img/logoWhite.png');
 let whyUsImage = require('responsive-loader?name=./img/[hash].&sizes[]=700!img/whyUs.jpg');
 let beachImage = require('responsive-loader?name=./img/[hash].&sizes[]=1300!img/beach.jpg');
+let logoWhite = require('responsive-loader?name=./img/logo-mail.&sizes[]=1300!img/logo-mail.png');
 
 let info = {
     navbar: [{
