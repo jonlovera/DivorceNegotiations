@@ -17,47 +17,55 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
 
     // prepare a "pretty" version of the message
     $body = "
-<html>
-<body style='margin:20px;'>
-    <img src='http://divorcenegotiations.com.au/build/img/logo-mail.png' alt='Divorce Negotiations' title='Divorce Negotiations' style='display:block' width='184.64px' height='42px' />
-    <hr style='
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
-    padding: 0; ' />
-    <div style='color:#434350;margin: 0 15px;'>
-        <span style='font-size:18px;'>
-            Hi David,
+    <html>
+    <body style='margin:20px;'>
+        <img src='http://divorcenegotiations.com.au/build/img/logo-mail.png' alt='Divorce Negotiations' title='Divorce Negotiations' style='display:block' width='184.64px' height='42px' />
+        <hr style='
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+        padding: 0; ' />
+        <div style='color:#434350;margin: 0 15px;'>
+            <span style='font-size:18px;'>
+                Hi David,
+                <br/>
+                <br/>
+                <b>$name</b> would like to received a call from your team. See the details below:
+            </span>
             <br/>
             <br/>
-            <b>$name</b> would like to received a call from your team. See the details below:
-        </span>
-        <br/>
-        <br/>
 
-        <table style='font-size:16px;margin-top:20px;'>
-            <tr>
-                <td>Name</td>
-                <td>$name</td>
-            </tr>
-            <tr>
-                <td>Surname</td>
-                <td>$surname</td>
-            </tr>
-            <tr>
-                <td>Contact N.:</td>
-                <td>$phoneNumber</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>$email</td>
-            </tr>
-        </table>
-    </div>
-</body>
-</html>";
+            <table style='font-size:16px;margin-top:20px;'>
+                <tr>
+                    <td><b style='padding-right: 15px'>Name</b></td>
+                    <td>$name</td>
+                </tr>
+                <tr>
+                    <td><b style='padding-right: 15px'>Surname</b></td>
+                    <td>$surname</td>
+                </tr>
+                <tr>
+                    <td><b style='padding-right: 15px'>Contact N.</b></td>
+                    <td>$phoneNumber</td>
+                </tr>
+                <tr>
+                    <td><b style='padding-right: 15px'>Email</b></td>
+                    <td>$email</td>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+            <span style='font-size:18px;'>
+                Please get in contact within 3 to 5 days.
+                <br/>
+                <br/>
+                Thanks!
+            </span>
+        </div>
+    </body>
+    </html>";
 
     // Use the submitters email if they supplied one
     // (and it isn't trying to hack your form).
@@ -69,7 +77,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     // finally, send the message
-    mail($youremail, 'DivorceNegotiations.com.au - '.$name.' would like to received a call from your team.', $body, $headers );
+    mail($youremail, $name .' would like to get in contact.', $body, $headers );
     header("HTTP/1.0 200 Success");
     die("OK.");
 

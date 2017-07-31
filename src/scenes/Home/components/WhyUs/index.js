@@ -9,7 +9,7 @@ export default class WhyUs extends Component {
         let info = this.props.info;
         return (
             <Row>
-                <Col s={12} l={8} className="offset-l2 no-padding">
+                <Col s={12} l={10} className="offset-l1 no-padding">
                     <div className="center-align">
                         <div className="box-title no-border">
                             <span>Why us?</span>
@@ -20,7 +20,7 @@ export default class WhyUs extends Component {
                         <img {...info.getImage()} style={{width: "100%", height: "initial"}}/>
                     </div>
                 </Col>
-                <Col s={10} l={6} className="offset-s1 offset-l3">
+                <Col s={10} l={8} className="offset-s1 offset-l2">
                     <h5 className="color-gray" dangerouslySetInnerHTML={{
                         __html: info.description
                     }}></h5>

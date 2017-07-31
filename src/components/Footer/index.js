@@ -34,7 +34,7 @@ export default class Footer extends Component {
                         color: "#fff",
                         cursor: "pointer",
                         padding: "20px",
-                        display:"inline-block"
+                        display: "inline-block"
                     }}>
                         {item.title}
                     </Link>
@@ -74,7 +74,7 @@ export default class Footer extends Component {
                 <div className="container"/> {backToTheTop}
                 <div className="footer-copyright">
                     <Row className="full-w no-margin">
-                        <Col s={10} m={5} l={4} className={"offset-s1 offset-m1 offset-l2" + logoClass}>
+                        <Col s={10} m={5} l={5} className={"offset-s1 offset-m1 offset-l1" + logoClass}>
                             <span dangerouslySetInnerHTML={{
                                 __html: jsonData.about.getAvatar
                             }}/>
@@ -83,8 +83,10 @@ export default class Footer extends Component {
                             <div className="uppercase center-align">{navbarList}</div>
                             <hr/>
                         </Col>
-                        <Col s={10} m={5} l={4} className={"offset-s1" + aboutClass}>
-                            <h6>© 2017 {jsonData.about.name}. All rights reserved.</h6>
+                        <Col s={10} m={5} l={5} className={"offset-s1" + aboutClass}>
+                            <h6 style={{
+                                padding: '7px 0'
+                            }}>© 2017 {jsonData.about.name}. All rights reserved.</h6>
                         </Col>
                     </Row>
                 </div>

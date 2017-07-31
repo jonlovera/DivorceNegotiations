@@ -5,18 +5,27 @@ let logoWhite = require('responsive-loader?name=./img/logo-mail.&sizes[]=1300!im
 
 let info = {
     navbar: [{
+        title: "Who we are",
+        id: "about"
+    }, {
         title: "Why Us",
         id: "whyus"
     }, {
         title: "Testimonials",
         id: "testimonials"
     }, {
-        title: "FAQ",
-        id: "faq"
+        title: "Getting Started",
+        id: "gettingStarted"
     }, {
         title: "Contact",
         id: "contact"
+    }, {
+        title: "FAQ",
+        id: "faq"
     }],
+    beachImage: () => {
+        return beachImage.src;
+    },
     about: {
         logo: logo,
         getAvatar: `<svg width="74px" height="41px" viewBox="0 0 74 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -56,8 +65,8 @@ let info = {
         <br /><br />The legal profession has created an entire industry out of divorce.  When considering divorces which fall into the ‘Simple profile’, the legal profession knows all the answers (i.e.: what the split should be??) but no one will tell you until the very end and of course by this time you have spent over $150K each.
         <br /><br />It seems to be a process where everyone (lawyers & mediators etc.) take your money along the journey while ‘trying to help you settle’ however when you ask a direct question about the percentage split the common answer is:-“….only the judge can tell you.”  Of course by the time you get to the judge you have spent 4+ years in the system and spent over $150k each with the lawyers and mediators all taking their piece.
         <br /><br />Divorce Negotiations concentrates on cases that fall into the ‘Simple profile’ and by doing this we believe we can help free up the lawyers to focus on the cases that need their skills; namely cases which fall into the Complicated and/or Volatile profiles.
-        <br /><br />Having spoken to many people who have divorced using lawyers and attended court they were very disappointment with their decision to engaged lawyers and/or proceed to court.  None of them believed it was value for money and all of them were highly critical of the process.
-        <br /><br />We have more than 20 years’ negotiating experience and truly understand the emotional drain divorce can place on individuals.  We will take time to outline the alternative path and we believe once people understand what the lawyer/court process involves they will be very eager to reach an agreement.
+        <br /><br />Having spoken to many people who have divorced using lawyers and attended court they were very disappointment with their decision to engaged lawyers and/or proceed to court.  None of them believe it was value for money and all of them were highly critical of the process.
+        <br /><br />We have more than 20 years’ negotiating experience and truly understand the emotional drain divorce can place on individuals.  We will take time to outline the alternative paths and we believe once people understand what the lawyer/court process involves they will be very eager to reach an agreement.
         <br /><br />It is very important to understand that we are not lawyers and do not offer any legal advice but that is our competitive advantage because we are focused on getting an immediate result rather than dragging the process out for years.
         <br /><br />Think of Divorce Negotiations as the Uber of the divorce industry.  For 40 years the legal profession has controlled all the answers and the process.  Divorce Negotiations is empowering people to arrive at a successful outcome without the expense and the pain that has been felt by people who proceed to court.
         <br /><br />Put simply, we help people understand the opportunity cost of delay. We believe a high percentages of <b>divorces fall into the following profiles:</b> `,
@@ -163,6 +172,13 @@ let info = {
         name: "Kate from Bondi",
         description: "My lawyer kept telling me I had a really strong case.  It dragged on for three and half years, cost so much money and when we got to the court day the Barrister (who I had paid up front) told me I needed to settle.   I felt so used.  I wished I had of used Divorce Negotiations.",
     }],
+    gettingStarted: {
+        description: "Firstly, contact our office for an initial discussion which is free.  The aim of the initial call is to determine if we can help you (i.e.: if your desire for a successful outcome outweighs your negative feelings towards your ex-partner then there is a high degree chance of a successful outcome).  If we don’t believe we can help you we have no interest in wasting your time or money and we will explain why. <br/><br/>One of the most common reason why we may not be able to help you is if one of the parties has no interest in settling or they want their day in court.  Don’t despair because in some of these cases it may be an option to come back to us later once some of the emotions have settled down (or when the bank balance has received a significant battering). <br/><br/>If we believe we can help you the next step is to complete a quick form outlining the assets, liabilities and your desired outcome.  One of our team will then have a call with both parties individually and then we can make a decision whether to proceed with a formal negotiation session.  If we decide to proceed an appointment is set and at this point payment will be due. "
+    },
+    contact: {
+        phone: "+61408200401",
+        phoneBeautified: "+61 408 200 401",
+    },
     FAQ: [{
         question: "What is the difference between mediators and Divorce Negotiations?",
         answer: "Mediators spend their time repeating nearly verbatim what each party has said to the other party even though everyone was in the same room and heard firsthand what the other person said.  Mediators will not suggest what is or isn’t a good outcome.  Divorce Negotiations will identify the differences and try to bring the parties to a point of agreement.",
@@ -172,25 +188,7 @@ let info = {
     }, {
         question: "When should I use a lawyer?",
         answer: "If you have complicated financial assets, issues of violence or child abuse Divorce Negotiations is not for you.  If you decide to consult a lawyer our advice is to use a Family Court Specialists (lawyers who only work on family court matters).",
-    }],
-    contact: {
-        carousel: {
-            items: [{
-                image: "contactCarousel/carousel1.jpg",
-            }, {
-                image: "contactCarousel/carousel2.jpg",
-            }]
-        },
-        getImage: () => {
-            let a = beachImage;
-            delete a.toString;
-            delete a.images;
-            return a;
-        },
-        phone: "+61408200401",
-        phoneBeautified: "+61 408 200 401",
-        description: "Firstly, contact our office for an initial discussion which is free.  The aim of the initial call is to determine if you we can help you (i.e.: if your desire for a successful outcome outweighs your negative feelings towards your ex-partner then there is a high degree chance of a successful outcome).  If we don’t believe we can help you we have no interest in wasting your time or money and we will explain why. <br/><br/>One of the most common reason why we may not be able to help you is if one of the parties has no interest in settling or they want their day in court.  Don’t despair because in some of these cases it may be an option to come back to us later once some of the emotions have settled down (or when the bank balance has received a significant battering). <br/><br/>If we believe we can help you the next step is to complete a quick form outlining the assets, liabilities and your desired outcome.  One of our team will then have a call with both parties individually and then we can make a decision whether to proceed with a formal negotiation session.  If we decide to proceed an appointment is set and at this point payment will be due. "
-    }
+    }]
 }
 
 // Let webpack compile all carousel images
@@ -201,17 +199,6 @@ info.carousel.items.map((item, index) => {
         let carouselAvatar = require(`responsive-loader?placeholder=true&name=./img/carousel/[hash].&sizes[]=1200&!img/carousel/${item.image}`);
         item.image = carouselAvatar;
         info.carousel.items[index] = item;
-    }
-});
-
-// Let webpack compile all carousel images
-// and then substitute each avatar on each carousel
-// with the hash of the new compiled image
-info.contact.carousel.items.map((item, index) => {
-    if (item.image) {
-        let carouselAvatar = require(`responsive-loader?placeholder=true&name=./img/carousel/[hash].&sizes[]=1200&!img/carousel/${item.image}`);
-        item.image = carouselAvatar;
-        info.contact.carousel.items[index] = item;
     }
 });
 

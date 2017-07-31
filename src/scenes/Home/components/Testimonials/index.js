@@ -36,7 +36,7 @@ export default class Testimonials extends Component {
                 arrows: false,
                 pauseOnHover: false,
                 autoplay: true,
-                autoplaySpeed: 10500,
+                autoplaySpeed: 14500,
                 responsive: [
                     {
                         breakpoint: 601,
@@ -54,7 +54,7 @@ export default class Testimonials extends Component {
                 ]
             };
         return (
-            <Row className="background-primary">
+            <Row className="background-primary no-margin">
                 <Col s={12} m={10} l={8} className="offset-m1 offset-l2">
                     <div className="center-align">
                         <div className="box-title no-border">

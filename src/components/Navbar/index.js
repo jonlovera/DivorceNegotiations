@@ -58,7 +58,7 @@ export default class Nav extends Component {
         return (
             <nav className="uppercase row">
                 <div className="nav-wrapper">
-                    <Col s={10} l={8} className="offset-s1 offset-l2">
+                    <Col s={10} l={10} className="offset-s1 offset-l1 no-padding">
                         <a href="/" className="brand-logo">
                             {brand}
                         </a>

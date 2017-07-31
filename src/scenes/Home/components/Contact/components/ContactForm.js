@@ -173,9 +173,10 @@ export default class ContactForm extends Component {
                     }}/>
                     <br/>
                     <br/>
-                    Thanks, {this.state.firstName}!
+                    <br/>
+                    Thank you for your message.
                     <br/><br/>
-                    We have received your details. We will get in contact with you in the next 3 to 5 days.
+                    One of our team will be in touch with you shortly.
                 </div>
             </div>;
         };

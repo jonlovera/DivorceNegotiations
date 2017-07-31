@@ -355,6 +355,18 @@ nav .button-collapse {
     // left: 300px;
     // z-index:
 }
+@media only screen and (max-width: 400px) {
+    // nav {
+    //     padding: 0 !important;
+    // }
+    .box-title.bigger {
+        font-size: 37px;
+    }
+    .brand-logo span span:last-child, nav .brand-logo span span:last-child {
+        font-size: 21px !important;
+    }
+}
+
 @media only screen and (max-width: 601px) {
     // nav {
     //     padding: 0 !important;
@@ -385,7 +397,7 @@ nav ul a {
 }
 
 nav ul a {
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 2.4px;
 }
 
@@ -513,6 +525,7 @@ section > div {
     z-index: 2;
     position: relative;
     text-align: center;
+    line-height: 19px;
 }
 
 .contactForm .message > div {

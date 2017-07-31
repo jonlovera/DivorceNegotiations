@@ -24,7 +24,7 @@ export default class About extends Component {
 
         return (
             <Row>
-                <Col s={10} l={6} className="offset-s1 offset-l3">
+                <Col s={10} l={8} className="offset-s1 offset-l2">
                     <div className="center-align">
                         <div className="box-title bigger">
                             <span dangerouslySetInnerHTML={{
@@ -37,14 +37,14 @@ export default class About extends Component {
                     }}></h5>
                 </Col>
                 <Col s={12} className="background-primary profiles">
-                    <Col s={10} l={8} className="offset-s1 offset-l2">
+                    <Col s={10} l={10} className="offset-s1 offset-l1">
                         <h4 className="SFNS-Display">Divorce profiles</h4>
                     </Col>
-                    <Col s={10} l={8} className="offset-s1 offset-l2">
+                    <Col s={10} l={10} className="offset-s1 offset-l1">
                         {profiles}
                     </Col>
-                    <Col s={10} l={8} className="offset-s1 offset-l2 color-gray lighter">
-                        For Volatile and Difficult profiles, we recommend you seek legal advise.
+                    <Col s={10} l={10} className="offset-s1 offset-l1 color-gray lighter">
+                        For <b>Volatile</b> and <b>Difficult</b> profiles, we recommend you seek legal advise.
                     </Col>
                 </Col>
             </Row>
