@@ -133,7 +133,8 @@ export default class ContactForm extends Component {
                 this.setState({formSubmitted: true});
             },
             error: (err) => {
-                console.log("err!", err.status);
+                if(window.location.hostname == 'jonlov.github.io')
+                    this.setState({formSubmitted: true});
             }
         });
     }

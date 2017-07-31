@@ -1,15 +1,13 @@
 
 <p align="center">
-    <img src="/assets/img/logo-80x82.png" alt="Jonathan Lovera"/>
-    <br>
-    <h1>Jonathan Lovera's Portfolio</h1>
+    <h1>Divorce Negotiations Website</h1>
 </p>
 
-This is my simple portfolio created with ReactJS compiled with webpack.
+This is my simple website created with ReactJS compiled with webpack.
 
 It contains some frameworks as Material Design, Jquery, TypedJS and others.
 
-Live demo: http://jonlov.github.io
+Live demo: http://jonlov.github.io/DivorceNegotiations
 
 # Installation
 To run this project local you must have NodeJS installed.
