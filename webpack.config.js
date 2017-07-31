@@ -69,8 +69,8 @@ module.exports = {
     entry: `${__dirname}/src/index.js`,
     output: {
         path: `${__dirname}/build`,
-        // publicPath: '/DivorceNegotiations/build/',
-        publicPath: '/build/',
+        publicPath: '/DivorceNegotiations/build/',
+        // publicPath: '/build/',
         filename: 'bundle.[hash].js'
     },
 
