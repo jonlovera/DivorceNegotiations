@@ -345,8 +345,8 @@ nav .button-collapse {
     transition: none;
 }
 
-.side-nav li > a:hover,
-.side-nav li:hover {
+.side-nav li:hover,
+.side-nav li:hover a {
     background-color: #494949;
     color: #fff;
 }
@@ -362,11 +362,12 @@ nav .button-collapse {
     .box-title.bigger {
         font-size: 37px;
     }
-    .brand-logo span span:last-child, nav .brand-logo span span:last-child {
+
+    .brand-logo span span:last-child,
+    nav .brand-logo span span:last-child {
         font-size: 21px !important;
     }
 }
-
 @media only screen and (max-width: 601px) {
     // nav {
     //     padding: 0 !important;
@@ -388,6 +389,29 @@ nav .button-collapse {
         transform: inherit;
     }
 }
+@media only screen and (max-width: 1039px) {
+    .brand-logo span span:nth-of-type(2) {
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 914px) {
+    .nav-wrapper ul:nth-of-type(1) {
+        display: none !important;
+    }
+}
+@media only screen and (min-width: 914px) {
+    #sidenav-overlay,
+    .drag-target,
+    .nav-wrapper .button-collapse,
+    .nav-wrapper .side-nav {
+        display: none !important;
+    }
+
+    body {
+        overflow: auto !important;
+        width: inherit !important;
+    }
+}
 
 .brand-logo,
 nav .brand-logo,
@@ -397,7 +421,7 @@ nav ul a {
 }
 
 nav ul a {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2.4px;
 }
 
@@ -510,9 +534,9 @@ section > div {
 }
 
 .contactForm {
-    width: 105.5%;
+    width: 100%;
     border-radius: 0;
-    margin-left: -10px;
+    margin-left: 0;
     padding: 40px 20px;
     background-color: #f0f0f0;
     margin-bottom: 80px;

@@ -28,7 +28,7 @@ export default class App extends Component {
         let navColor = () => {
             var wn = $(window).scrollTop();
             if (wn > 10) {
-                $("nav").css("background", "rgba(67, 67, 80, 0.7)");
+                $("nav").css("background", "rgba(67, 67, 80, 0.9)");
             } else {
                 $("nav").css("background", "");
             }

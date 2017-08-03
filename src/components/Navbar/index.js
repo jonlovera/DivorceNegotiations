@@ -4,6 +4,26 @@ import {Navbar, Col} from 'react-materialize';
 import jsonData from 'json';
 
 export default class Nav extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSetActive = this.handleSetActive.bind(this);
+        this.state = {
+            navList: jsonData.navbar
+        };
+    }
+
+    handleSetActive(to) {
+        jsonData.navbar.map((item, index) => {
+            jsonData.navbar[index].active = false;
+            if (item.id === to) {
+                jsonData.navbar[index].active = true;
+            }
+        });
+
+        this.setState({navList: jsonData.navbar});
+    }
+
     render() {
         let brand = (
                 <span>
@@ -15,10 +35,12 @@ export default class Nav extends Component {
                     }}></span>
                 </span>
             ),
-            navbarList = jsonData.navbar.map((item, index) => {
+            navbarList = this.state.navList.map((item, index) => {
                 return (
                     <li key={index}>
-                        <Link activeClass="active" to={item.id} spy={true} smooth={true}>
+                        <Link className={(item.active)
+                            ? "active"
+                            : null} to={item.id} spy={true} offset={10} smooth={true} onSetActive={this.handleSetActive}>
                             {item.title}
                         </Link>
                     </li>
@@ -68,7 +90,7 @@ export default class Nav extends Component {
                         <ul id="nav-mobile" className="side-nav">
                             {navbarList}
                         </ul>
-                        <a className="button-collapse hide-on-med-and-up" href="#" data-activates="nav-mobile" dangerouslySetInnerHTML={{
+                        <a className="button-collapse" href="#" data-activates="nav-mobile" dangerouslySetInnerHTML={{
                             __html: toggleIcon
                         }}></a>
                     </Col>

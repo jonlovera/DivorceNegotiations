@@ -36,7 +36,7 @@ export default class Testimonials extends Component {
                 arrows: false,
                 pauseOnHover: false,
                 autoplay: true,
-                autoplaySpeed: 14500,
+                autoplaySpeed: 16500,
                 responsive: [
                     {
                         breakpoint: 601,

@@ -32,7 +32,7 @@ export default class Contact extends Component {
                         Let us get in touch with you, just fill and send us your details below.
                     </h5>
                 </Col>
-                <Col s={12} m={10} l={6} className="offset-m1 offset-l3">
+                <Col s={12} m={10} l={6} className="offset-m1 offset-l3 no-padding">
                     <ContactForm/>
                 </Col>
             </Row>
