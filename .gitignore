@@ -1,5 +1,6 @@
 # Dependency directory
 node_modules
+php/variables.php
 
 # Source maps
 *.js.map

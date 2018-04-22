@@ -9,17 +9,43 @@ $surname = strip_tags($_POST["lastName"]);
 $phoneNumber = strip_tags($_POST["phoneNumber"]);
 $email = strip_tags($_POST["email"]);
 
+require_once('variables.php');
+
+function sendMailByMailgun($to, $toname, $mailfromname, $mailfrom, $subject, $html, $text, $tag, $replyto){
+    $array_data = array(
+		'from'=> $mailfromname .'<'.$mailfrom.'>',
+		'to'=>$toname.'<'.$to.'>',
+		'subject'=>$subject,
+		'html'=>$html,
+		'text'=>$text,
+		'o:tracking'=>'yes',
+		'o:tracking-clicks'=>'yes',
+		'o:tracking-opens'=>'yes',
+		'o:tag'=>$tag,
+		'h:Reply-To'=>$replyto
+    );
+    $session = curl_init(MAILGUN_URL.'/messages');
+    curl_setopt($session, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+  	curl_setopt($session, CURLOPT_USERPWD, 'api:'.MAILGUN_KEY);
+    curl_setopt($session, CURLOPT_POST, true);
+    curl_setopt($session, CURLOPT_POSTFIELDS, $array_data);
+    curl_setopt($session, CURLOPT_HEADER, false);
+    curl_setopt($session, CURLOPT_ENCODING, 'UTF-8');
+    curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($session, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($session);
+    curl_close($session);
+    $results = json_decode($response, true);
+    return $results;
+}
+
 // if the url field is empty
 if(isset($_POST['url']) && $_POST['url'] == ''){
-
-    // put your email address here
-    $youremail = 'contact@divorcenegotiations.com.au';
-
     // prepare a "pretty" version of the message
     $body = "
     <html>
     <body style='margin:20px;'>
-        <img src='http://divorcenegotiations.com.au/build/img/logo-mail.png' alt='Divorce Negotiations' title='Divorce Negotiations' style='display:block' width='184.64px' height='42px' />
+        <img src='https://divorcenegotiations.com.au/build/img/logo-mail.png' alt='Divorce Negotiations' title='Divorce Negotiations' style='display:block' width='184.64px' height='42px' />
         <hr style='
         display: block;
         height: 1px;
@@ -67,20 +93,24 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
     </body>
     </html>";
 
-    // Use the submitters email if they supplied one
-    // (and it isn't trying to hack your form).
-    // Otherwise send from your email address.
-    $headers = "From: no-reply@divorcenegotiations.com.au";
-    $headers .= "Reply-To: ". $email . "\r\n";
 
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    // put your email address here
+    $to = 'dfitzsimmons@divorcenegotiations.com.au';
+    $toname = 'David Fitzsimmons';
 
-    // finally, send the message
-    mail($youremail, $name .' would like to get in contact.', $body, $headers );
+    $mailfromname = 'Divorce Negotiations';
+    $mailfrom = 'no-reply@divorcenegotiations.com.au';
+
+    $replyto = $email;
+    $subject = $name .' would like to get in contact.';
+    $html = $body;
+    $text = $body;
+    $tag = '';
+
+    sendMailByMailgun($to, $toname, $mailfromname, $mailfrom, $subject, $html, $text, $tag, $replyto);
+
     header("HTTP/1.0 200 Success");
     die("OK.");
-
 } // otherwise, let the spammer think that they got their message through
 
 header("HTTP/1.0 500 Server Error");
