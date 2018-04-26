@@ -1,7 +1,7 @@
 const webpack = require('webpack'),
     path = require('path'),
     FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
-
+    // https://script.google.com/macros/s/AKfycbyafL9SzVyyzy-k2dUYRs01S6fAByqUjnWl9AYgiE_tiOLoN2GZ/exec
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     extractSass = new ExtractTextPlugin({
@@ -12,22 +12,9 @@ const webpack = require('webpack'),
     HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin'),
     CopyWebpackPlugin = require('copy-webpack-plugin'),
     plugins = [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.$': 'jquery',
-            'window.jQuery': 'jquery'
-        }),
-        new HtmlWebpackPlugin({
-            filename: '../index.html',
-            template: 'assets/index.ejs',
-            alwaysWriteToDisk: true
-        }),
-        new HtmlWebpackPlugin({
-            filename: '../404.html',
-            template: 'assets/404.ejs',
-            alwaysWriteToDisk: true
-        }),
+        new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery', 'window.$': 'jquery', 'window.jQuery': 'jquery'}),
+        new HtmlWebpackPlugin({filename: '../index.html', template: 'assets/index.ejs', alwaysWriteToDisk: true}),
+        new HtmlWebpackPlugin({filename: '../404.html', template: 'assets/404.ejs', alwaysWriteToDisk: true}),
         new FaviconsWebpackPlugin({
             // Your source logo
             logo: './assets/img/logo.png',
@@ -62,6 +49,11 @@ const webpack = require('webpack'),
             // to `true` copies all files.
             copyUnmodified: true
         }),
+        new webpack.DefinePlugin({
+            "process.env.CONTACT_API": (process.env.CONTACT_API)
+                ? JSON.stringify(process.env.CONTACT_API)
+                : '/'
+        }),
         extractSass
     ];
 
@@ -75,27 +67,32 @@ module.exports = {
     },
 
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             }, {
                 test: /\.scss$/,
                 use: extractSass.extract({
-                    use: [{
-                        loader: "css-loader"
-                    }, {
-                        loader: "sass-loader"
-                    }],
+                    use: [
+                        {
+                            loader: "css-loader"
+                        }, {
+                            loader: "sass-loader"
+                        }
+                    ],
                     // use style-loader in development
                     fallback: "style-loader"
                 })
             }, {
                 test: /\.css$/,
                 use: extractSass.extract({
-                    use: [{
-                        loader: "css-loader"
-                    }],
+                    use: [
+                        {
+                            loader: "css-loader"
+                        }
+                    ],
                     // use style-loader in development
                     fallback: "style-loader"
                 })
@@ -125,9 +122,9 @@ module.exports = {
         modules: [path.resolve('./src'), path.resolve('./assets'), path.resolve('./node_modules')]
     },
 
-    plugins: process.argv.indexOf('-p') === -1 ?
-        plugins :
-        [
+    plugins: process.argv.indexOf('-p') === -1
+        ? plugins
+        : [
             new webpack.optimize.UglifyJsPlugin({
                 output: {
                     comments: false

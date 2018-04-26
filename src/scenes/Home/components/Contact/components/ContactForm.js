@@ -21,7 +21,8 @@ export default class ContactForm extends Component {
             phoneNumberValid: false,
             emailValid: false,
             formValid: false,
-            formSubmitted: false
+            formSubmitted: false,
+            sendingFrom: false
         }
         this.handleUserInput = this.handleUserInput.bind(this);
         this.validateField = this.validateField.bind(this);
@@ -118,23 +119,24 @@ export default class ContactForm extends Component {
     submitForm(e) {
         e.preventDefault();
 
+        this.setState({sendingFrom: true});
+
         $.ajax({
             type: 'POST',
-            url: "/php/sendMail.php",
+            url: process.env.CONTACT_API,
             data: {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 email: this.state.email,
-                phoneNumber: this.state.phoneNumber,
-                url: ''
+                phoneNumber: this.state.phoneNumber
             },
             dataType: "text",
             success: (resultData) => {
-                this.setState({formSubmitted: true});
+                this.setState({formSubmitted: true, sendingFrom: false});
             },
             error: (err) => {
                 if(window.location.hostname == 'jonlov.github.io')
-                    this.setState({formSubmitted: true});
+                    this.setState({formSubmitted: true, sendingFrom: false});
             }
         });
     }
@@ -195,7 +197,7 @@ export default class ContactForm extends Component {
                     <Col className="uppercase title center-align" s={12} style={{
                         marginTop: "1rem"
                     }}>
-                        <Button disabled={!this.state.formValid || this.state.formSubmitted}>CONTACT ME</Button>
+                        <Button disabled={!this.state.formValid || this.state.formSubmitted || this.state.sendingFrom}>CONTACT ME</Button>
                     </Col>
                     <CSSTransitionGroup transitionName="fade" transitionEnterTimeout={800} transitionLeaveTimeout={800}>
                         {content}

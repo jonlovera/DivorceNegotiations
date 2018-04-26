@@ -7,6 +7,7 @@ import jsonData from 'json';
 export default class Contact extends Component {
     render() {
         let info = jsonData.contact;
+        
         return (
             <Row className="no-margin">
                 <Col s={10} l={6} className="offset-s1 offset-l3">
@@ -18,7 +19,7 @@ export default class Contact extends Component {
                     </div>
                     <h5 className="color-gray center-align">
                         Call us {" "}&nbsp;
-                        <a href={"tel://" + info.phone} className="color-gray">
+                        <a href={"tel://" + info.phone.replace(/[^\x00-\x7F]/g, "")} className="color-gray">
                             <b style={{
                                 'fontSize': '20px',
                                 'color': '#989ca0'

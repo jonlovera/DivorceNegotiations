@@ -176,8 +176,8 @@ let info = {
         description: "Firstly, contact our office for an initial discussion which is free.  The aim of the initial call is to determine if we can help you (i.e.: if your desire for a successful outcome outweighs your negative feelings towards your ex-partner then there is a high degree chance of a successful outcome).  If we don’t believe we can help you we have no interest in wasting your time or money and we will explain why. <br/><br/>One of the most common reason why we may not be able to help you is if one of the parties has no interest in settling or they want their day in court.  Don’t despair because in some of these cases it may be an option to come back to us later once some of the emotions have settled down (or when the bank balance has received a significant battering). <br/><br/>If we believe we can help you the next step is to complete a quick form outlining the assets, liabilities and your desired outcome.  One of our team will then have a call with both parties individually and then we can make a decision whether to proceed with a formal negotiation session.  If we decide to proceed an appointment is set and at this point payment will be due. "
     },
     contact: {
-        phone: "+61408200401",
-        phoneBeautified: "+61 408 200 401",
+        phone: "+61491061288‬",
+        phoneBeautified: "+61 491 061 288‬",
     },
     FAQ: [{
         question: "What is the difference between mediators and Divorce Negotiations?",
