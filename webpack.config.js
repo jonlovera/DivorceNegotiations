@@ -1,135 +1,158 @@
 const webpack = require('webpack'),
-    path = require('path'),
-    FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
-    // https://script.google.com/macros/s/AKfycbyafL9SzVyyzy-k2dUYRs01S6fAByqUjnWl9AYgiE_tiOLoN2GZ/exec
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    ExtractTextPlugin = require("extract-text-webpack-plugin"),
-    extractSass = new ExtractTextPlugin({
-        filename: "[name].[contenthash].css",
-        disable: process.env.NODE_ENV === "development"
+  path = require('path'),
+  FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  extractSass = new ExtractTextPlugin({
+    filename: 'static/[name].[contenthash].css',
+    disable: process.env.NODE_ENV === 'development',
+  }),
+  WebpackCleanupPlugin = require('webpack-cleanup-plugin'),
+  HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin'),
+  CopyWebpackPlugin = require('copy-webpack-plugin'),
+  plugins = [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
     }),
-    WebpackCleanupPlugin = require('webpack-cleanup-plugin'),
-    HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin'),
-    CopyWebpackPlugin = require('copy-webpack-plugin'),
-    plugins = [
-        new webpack.ProvidePlugin({$: 'jquery', jQuery: 'jquery', 'window.$': 'jquery', 'window.jQuery': 'jquery'}),
-        new HtmlWebpackPlugin({filename: '../index.html', template: 'assets/index.ejs', alwaysWriteToDisk: true}),
-        new HtmlWebpackPlugin({filename: '../404.html', template: 'assets/404.ejs', alwaysWriteToDisk: true}),
-        new FaviconsWebpackPlugin({
-            // Your source logo
-            logo: './assets/img/logo.png',
-            // The prefix for all image files (might be a folder or a name)
-            prefix: 'icons-[hash]/'
-        }),
-        new HtmlWebpackHarddiskPlugin(),
-        new WebpackCleanupPlugin(),
-        new CopyWebpackPlugin([
-            // Copy directory contents to {output}/
-            {
-                from: 'assets'
-            },
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'assets/index.ejs',
+      alwaysWriteToDisk: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: 'assets/404.ejs',
+      alwaysWriteToDisk: true,
+    }),
+    new FaviconsWebpackPlugin({
+      // Your source logo
+      logo: './assets/img/logo.png',
+      // The prefix for all image files (might be a folder or a name)
+      prefix: 'static/icons-[hash]/',
+    }),
+    new HtmlWebpackHarddiskPlugin(),
+    new WebpackCleanupPlugin(),
+    new CopyWebpackPlugin(
+      [
+        // Copy directory contents to {output}/
+        {
+          from: 'assets',
+        },
 
-            // Copy glob results, relative to context
-            //    {
-            //        context: 'assets',
-            //        from: '**/*'
-            //    }
-        ], {
-            ignore: [
-                // Doesn't copy any files with a txt extension
-                '*.scss',
-                '*.css',
-                '*.png',
-                '*.gif',
-                '*.ejs'
-            ],
+        // Copy glob results, relative to context
+        //    {
+        //        context: 'assets',
+        //        from: '**/*'
+        //    }
+      ],
+      {
+        ignore: [
+          // Doesn't copy any files with a txt extension
+          '*.scss',
+          '*.css',
+          '*.png',
+          '*.gif',
+          '*.ejs',
+        ],
 
-            // By default, we only copy modified files during
-            // a watch or webpack-dev-server build. Setting this
-            // to `true` copies all files.
-            copyUnmodified: true
-        }),
-        new webpack.DefinePlugin({
-            "process.env.CONTACT_API": (process.env.CONTACT_API)
-                ? JSON.stringify(process.env.CONTACT_API)
-                : '/'
-        }),
-        extractSass
-    ];
+        // By default, we only copy modified files during
+        // a watch or webpack-dev-server build. Setting this
+        // to `true` copies all files.
+        copyUnmodified: true,
+      },
+    ),
+    new webpack.DefinePlugin({
+      'process.env.CONTACT_API': JSON.stringify('/api/contact'),
+    }),
+    extractSass,
+  ];
 
 module.exports = {
-    entry: `${__dirname}/src/index.js`,
-    output: {
-        path: `${__dirname}/build`,
-        publicPath: '/DivorceNegotiations/build/',
-        // publicPath: '/build/',
-        filename: 'bundle.[hash].js'
-    },
+  entry: `${__dirname}/src/index.js`,
+  output: {
+    path: `${__dirname}/build`,
+    // publicPath: '/DivorceNegotiations/build/',
+    publicPath: '/',
+    filename: 'static/bundle.[hash].js',
+  },
 
-    module: {
-        rules: [
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
-            }, {
-                test: /\.scss$/,
-                use: extractSass.extract({
-                    use: [
-                        {
-                            loader: "css-loader"
-                        }, {
-                            loader: "sass-loader"
-                        }
-                    ],
-                    // use style-loader in development
-                    fallback: "style-loader"
-                })
-            }, {
-                test: /\.css$/,
-                use: extractSass.extract({
-                    use: [
-                        {
-                            loader: "css-loader"
-                        }
-                    ],
-                    // use style-loader in development
-                    fallback: "style-loader"
-                })
-            }, {
-                test: /\.gif$/,
-                loader: 'url-loader?limit=65000&mimetype=image/gif&name=img/[name].[ext]'
-            }, {
-                test: /\.svg$/,
-                loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]'
-            }, {
-                test: /\.woff$/,
-                loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=fonts/[name].[ext]'
-            }, {
-                test: /\.woff2$/,
-                loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name=fonts/[name].[ext]'
-            }, {
-                test: /\.[ot]tf$/,
-                loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name=fonts/[name].[ext]'
-            }, {
-                test: /\.eot$/,
-                loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]'
-            }
+              loader: 'css-loader',
+            },
+            {
+              loader: 'sass-loader',
+            },
+          ],
+          // use style-loader in development
+          fallback: 'style-loader',
+        }),
+      },
+      {
+        test: /\.css$/,
+        use: extractSass.extract({
+          use: [
+            {
+              loader: 'css-loader',
+            },
+          ],
+          // use style-loader in development
+          fallback: 'style-loader',
+        }),
+      },
+      {
+        test: /\.gif$/,
+        loader: 'url-loader?limit=65000&mimetype=image/gif&name=img/[name].[ext]',
+      },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]',
+      },
+      {
+        test: /\.woff$/,
+        loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=fonts/[name].[ext]',
+      },
+      {
+        test: /\.woff2$/,
+        loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name=fonts/[name].[ext]',
+      },
+      {
+        test: /\.[ot]tf$/,
+        loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name=fonts/[name].[ext]',
+      },
+      {
+        test: /\.eot$/,
+        loader:
+          'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]',
+      },
+    ],
+  },
+  resolve: {
+    modules: [path.resolve('./src'), path.resolve('./assets'), path.resolve('./node_modules')],
+  },
 
-        ]
-    },
-    resolve: {
-        modules: [path.resolve('./src'), path.resolve('./assets'), path.resolve('./node_modules')]
-    },
-
-    plugins: process.argv.indexOf('-p') === -1
-        ? plugins
-        : [
-            new webpack.optimize.UglifyJsPlugin({
-                output: {
-                    comments: false
-                }
-            }),
-            ...plugins
-        ]
+  plugins:
+    process.argv.indexOf('-p') === -1
+      ? plugins
+      : [
+        new webpack.optimize.UglifyJsPlugin({
+          output: {
+            comments: false,
+          },
+        }),
+        ...plugins,
+      ],
 };

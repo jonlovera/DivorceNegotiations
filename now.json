@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "name": "divorcenegotiations",
+  "scope": "divorcenegotiations",
+  "alias": "www.divorcenegotiations.com.au",
+  "regions": ["sfo1", "hnd1", "bru"],
+  "builds": [
+    { "src": "api/contact.js", "use": "@now/node-server" },
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api(/([^/]+)/?(.*))",
+      "dest": "/api/$2.js",
+      "headers": { "cache-control": "s-maxage=31536000, max-age=0" }
+    },
+    {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/build/static/$1"
+    },
+    {
+      "src": "/img/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/build/img/$1"
+    },
+    {
+      "src": "/fonts/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/build/fonts/$1"
+    },
+    {
+      "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/index.html"
+    }
+  ]
+}
