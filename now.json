@@ -2,7 +2,6 @@
   "version": 2,
   "name": "divorcenegotiations",
   "scope": "divorcenegotiations",
-  "alias": "www.divorcenegotiations.com.au",
   "regions": ["sfo1", "hnd1", "bru"],
   "builds": [
     { "src": "api/contact.js", "use": "@now/node-server" },
