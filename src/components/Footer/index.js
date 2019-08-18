@@ -30,7 +30,10 @@ export default class Footer extends Component {
   render() {
     let navbarList = jsonData.navbar.map((item, index) => (
       <Link
-        key={index} to={item.id} smooth style={{
+        key={index}
+        to={item.id}
+        smooth
+        style={{
           color: '#fff',
           cursor: 'pointer',
           padding: '20px',
@@ -39,13 +42,9 @@ export default class Footer extends Component {
       >
         {item.title}
       </Link>
-                )),
-      aboutClass = (this.state.width <= 601)
-                ? ' center-align'
-                : ' right-align',
-      logoClass = (this.state.width <= 601)
-                ? ' p15 center-align'
-                : '',
+      )),
+      aboutClass = this.state.width <= 601 ? ' center-align' : ' right-align',
+      logoClass = this.state.width <= 601 ? ' p15 center-align' : '',
       arrowUp = `<svg width="11px" height="17px" viewBox="0 0 11 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id="DN---Tablet" transform="translate(-437.000000, -9315.000000)" fill="#434350">
@@ -60,16 +59,17 @@ export default class Footer extends Component {
                         </g>
                     </g>
                 </svg>`,
-      backToTheTop = (this.state.width <= 601)
-                ? (<div className="toTheTop" onClick={this.scrollToTop}>
-                        Back to top
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: arrowUp,
-                          }}
-                        />
-                </div>)
-                : null;
+      backToTheTop =
+        this.state.width <= 601 ? (
+          <div className="toTheTop" onClick={this.scrollToTop}>
+            Back to top
+            <span
+              dangerouslySetInnerHTML={{
+                __html: arrowUp,
+              }}
+            />
+          </div>
+        ) : null;
 
     return (
       <footer className="page-footer small background-primary">
@@ -92,7 +92,9 @@ export default class Footer extends Component {
                 style={{
                   padding: '7px 0',
                 }}
-              >© 2017 {jsonData.about.name}. All rights reserved.</h6>
+              >
+                © {new Date().getFullYear()} {jsonData.about.name}. All rights reserved.
+              </h6>
             </Col>
           </Row>
         </div>
