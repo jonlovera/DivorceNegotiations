@@ -25,7 +25,6 @@ production:
       -e MAILGUN_DOMAIN=$MAILGUN_DOMAIN \
       -e EMAIL_TO=$EMAIL_TO \
       --token=$NOW_TOKEN --target=production
-    - ./node_modules/.bin/now alias www.divorcenegotiations.com.au --token=$NOW_TOKEN
   environment:
     name: production
     url: https://www.divorcenegotiations.com
