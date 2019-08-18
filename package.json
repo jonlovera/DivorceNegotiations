@@ -1,8 +1,8 @@
 {
-  "name": "divorce-negotiations",
+  "name": "www.divorcenegotiations.com.au",
   "version": "1.0.0",
   "private": true,
-  "description": "DivorceNegotiations.com.au official website",
+  "description": "www.divorcenegotiations.com.au official website",
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
     "build": "webpack -p"
