@@ -1,34 +1,39 @@
-let logo = require('responsive-loader?name=./img/[hash].&sizes[]=300!img/logoWhite.png');
-let whyUsImage = require('responsive-loader?name=./img/[hash].&sizes[]=700!img/whyUs.jpg');
-let beachImage = require('responsive-loader?name=./img/[hash].&sizes[]=1300!img/beach.jpg');
-let logoWhite = require('responsive-loader?name=./img/logo-mail.&sizes[]=1300!img/logo-mail.png');
+const logo = require('responsive-loader?name=./img/[hash].&sizes[]=300!img/logoWhite.png');
+const whyUsImage = require('responsive-loader?name=./img/[hash].&sizes[]=700!img/whyUs.jpg');
+const beachImage = require('responsive-loader?name=./img/[hash].&sizes[]=1300!img/beach.jpg');
+const logoWhite = require('responsive-loader?name=./img/logo-mail.&sizes[]=1300!img/logo-mail.png');
 
-let info = {
-    navbar: [{
-        title: "Who we are",
-        id: "about"
-    }, {
-        title: "Why Us",
-        id: "whyus"
-    }, {
-        title: "Testimonials",
-        id: "testimonials"
-    }, {
-        title: "Getting Started",
-        id: "gettingStarted"
-    }, {
-        title: "Contact",
-        id: "contact"
-    }, {
-        title: "FAQ",
-        id: "faq"
-    }],
-    beachImage: () => {
-        return beachImage.src;
+const info = {
+  navbar: [
+    {
+      title: 'Who we are',
+      id: 'about',
     },
-    about: {
-        logo: logo,
-        getAvatar: `<svg width="74px" height="41px" viewBox="0 0 74 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    {
+      title: 'Why Us',
+      id: 'whyus',
+    },
+    {
+      title: 'Testimonials',
+      id: 'testimonials',
+    },
+    {
+      title: 'Getting Started',
+      id: 'gettingStarted',
+    },
+    {
+      title: 'Contact',
+      id: 'contact',
+    },
+    {
+      title: 'FAQ',
+      id: 'faq',
+    },
+  ],
+  beachImage: () => beachImage.src,
+  about: {
+    logo,
+    getAvatar: `<svg width="74px" height="41px" viewBox="0 0 74 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <g id="DN---Tablet" transform="translate(-33.000000, -23.000000)" fill="#FEFEFE">
                                 <g id="Nav-" transform="translate(2.000000, 0.000000)">
@@ -43,7 +48,7 @@ let info = {
                         </g>
                     </svg>
         `,
-        getAvatarBigger: `<svg width="126px" height="85px" viewBox="0 0 159 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    getAvatarBigger: `<svg width="126px" height="85px" viewBox="0 0 159 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="DN---Tablet" transform="translate(-54.000000, -8959.000000)" fill="#FFFFFF">
                                     <g id="Footer---banner" transform="translate(-3.000000, 8718.000000)">
@@ -59,9 +64,9 @@ let info = {
                             </g>
                         </svg>
         `,
-        name: "Divorce Negotiations",
-        nameHTML: "Divorce <br />Negotiations",
-        description: `Divorce Negotiations aims to provide couples who have decided to split with an affordable, valuable and sensible methodology to settle property and financial matters without undertaking expensive and lengthy legal engagements.  Discussions can also extend to custody matters.
+    name: 'Divorce Negotiations',
+    nameHTML: 'Divorce <br />Negotiations',
+    description: `Divorce Negotiations aims to provide couples who have decided to split with an affordable, valuable and sensible methodology to settle property and financial matters without undertaking expensive and lengthy legal engagements.  Discussions can also extend to custody matters.
         <br /><br />The legal profession has created an entire industry out of divorce.  When considering divorces which fall into the ‘Simple profile’, the legal profession knows all the answers (i.e.: what the split should be??) but no one will tell you until the very end and of course by this time you have spent over $150K each.
         <br /><br />It seems to be a process where everyone (lawyers & mediators etc.) take your money along the journey while ‘trying to help you settle’ however when you ask a direct question about the percentage split the common answer is:-“….only the judge can tell you.”  Of course by the time you get to the judge you have spent 4+ years in the system and spent over $150k each with the lawyers and mediators all taking their piece.
         <br /><br />Divorce Negotiations concentrates on cases that fall into the ‘Simple profile’ and by doing this we believe we can help free up the lawyers to focus on the cases that need their skills; namely cases which fall into the Complicated and/or Volatile profiles.
@@ -70,10 +75,12 @@ let info = {
         <br /><br />It is very important to understand that we are not lawyers and do not offer any legal advice but that is our competitive advantage because we are focused on getting an immediate result rather than dragging the process out for years.
         <br /><br />Think of Divorce Negotiations as the Uber of the divorce industry.  For 40 years the legal profession has controlled all the answers and the process.  Divorce Negotiations is empowering people to arrive at a successful outcome without the expense and the pain that has been felt by people who proceed to court.
         <br /><br />Put simply, we help people understand the opportunity cost of delay. We believe a high percentages of <b>divorces fall into the following profiles:</b> `,
-        profiles: [{
-            title: "Simple",
-            description: "Mum, dad, kids, cars, property and superannuation (non-complicated asset portfolio)",
-            icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    profiles: [
+      {
+        title: 'Simple',
+        description:
+          'Mum, dad, kids, cars, property and superannuation (non-complicated asset portfolio)',
+        icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <g id="DN---Tablet" transform="translate(-234.000000, -2633.000000)">
                                 <g id="Divorce-profiles" transform="translate(0.000000, 2500.000000)">
@@ -89,11 +96,12 @@ let info = {
                                 </g>
                             </g>
                         </g>
-                    </svg>`
-        }, {
-            title: "Volatile",
-            description: "Where there is domestic violence or child abuse",
-            icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    </svg>`,
+      },
+      {
+        title: 'Volatile',
+        description: 'Where there is domestic violence or child abuse',
+        icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id="DN---Desktop-" transform="translate(-590.000000, -2614.000000)">
                             <g id="Divorce-Profiles" transform="translate(-11.000000, 2481.000000)">
@@ -113,11 +121,12 @@ let info = {
                             </g>
                         </g>
                     </g>
-                </svg>`
-        }, {
-            title: "Complicated",
-            description: "Families who have operating companies and/or a complicated asset portfolio.",
-            icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                </svg>`,
+      },
+      {
+        title: 'Complicated',
+        description: 'Families who have operating companies and/or a complicated asset portfolio.',
+        icon: `<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="DN---FINAL-002" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id="DN---Desktop-" transform="translate(-928.000000, -2614.000000)">
                             <g id="Divorce-Profiles" transform="translate(-11.000000, 2481.000000)">
@@ -137,69 +146,94 @@ let info = {
                             </g>
                         </g>
                     </g>
-                </svg>`
-        }]
+                </svg>`,
+      },
+    ],
+  },
+  carousel: {
+    items: [
+      {
+        image: 'carousel1.jpg',
+      },
+      {
+        image: 'carousel2.jpg',
+      },
+      {
+        image: 'carousel3.jpg',
+      },
+    ],
+    description: '"Sometimes when things are falling apart they may actually fall into place"',
+  },
+  whyUs: {
+    getImage: () => {
+      const a = whyUsImage;
+      delete a.toString;
+      delete a.images;
+      return a;
     },
-    carousel: {
-        items: [{
-            image: "carousel1.jpg",
-        }, {
-            image: "carousel2.jpg",
-        }, {
-            image: "carousel3.jpg",
-        }],
-        description: "\"Sometimes when things are falling apart they may actually fall into place\""
+    description:
+      'The traditional method for trying to settle a divorce is to engage lawyers and go through mediation.  Lawyers by nature are not negotiators but most of us think they are.  Lawyers send letters to each other outlining a position and their instructions.  It’s not until you get into the process that you truly understand how expensive this is.  The person who is sending the letter needs to discuss the contents with their lawyer and this time is chargeable and then you are charged by the page to have the letter typed and sent.  At the receiving end the other person is charged per page to have the letter read and then the same process is followed to have the reply drafted and sent back.  This process is followed back and forth for months and in a lot of cases years.  Then comes mediation. <br/><br/>At some point the lawyers will suggest you attend mediation (I hear you say you thought this was what you paid the lawyer for).  In order to attend mediation the mediator needs an outline of the situation:- assets, liabilities and desired outcomes etc.  This is prepared by the lawyers and at this point you need to start thinking of the time you spend agreeing on the contents and the costs of typing this up in the mediators desired format (no kidding this will be the same information you have already supplied in some form but it now needs to be typed up in a different format – think more money). <br/><br/>Mediators will sit both parties down and talk through what each party wants (having received letters outlining this previously you sit there wondering why you are there because you already know what the other party wants).  The most frustrating part of this is mediators will not make recommendations or tell you the probable outcome of court but will repeat (over and over) what the other party wants as if you are not in the room when they state it).   The mediator can cost in excess of $5,000 and by the time you have paid your individual lawyers to prepare the necessary documents the whole exercise can cost $10K.  The crazy part of this is that if you end up starting court proceedings you will be required to attend mediation numerous times. <br/><br/>The difference we offer is that we are negotiators.  We will identify the gaps and try to close them by making both parties understand the cost of not agreeing.  Often people may only be 5%-10% apart but once you understand the cost of not agreeing this percentage becomes insignificant.<br/><br/>In other words, we help people understand the opportunity costs of delay.',
+  },
+  testimonials: [
+    {
+      name: '<br/>Melissa from Castle Hill',
+      description:
+        'I used a lawyer for 4 years. It was a complete waste of time and money. I wish I had of known about Divorce Negotiations.',
     },
-    whyUs: {
-        getImage: () => {
-            let a = whyUsImage;
-            delete a.toString;
-            delete a.images;
-            return a;
-        },
-        description: "The traditional method for trying to settle a divorce is to engage lawyers and go through mediation.  Lawyers by nature are not negotiators but most of us think they are.  Lawyers send letters to each other outlining a position and their instructions.  It’s not until you get into the process that you truly understand how expensive this is.  The person who is sending the letter needs to discuss the contents with their lawyer and this time is chargeable and then you are charged by the page to have the letter typed and sent.  At the receiving end the other person is charged per page to have the letter read and then the same process is followed to have the reply drafted and sent back.  This process is followed back and forth for months and in a lot of cases years.  Then comes mediation. <br/><br/>At some point the lawyers will suggest you attend mediation (I hear you say you thought this was what you paid the lawyer for).  In order to attend mediation the mediator needs an outline of the situation:- assets, liabilities and desired outcomes etc.  This is prepared by the lawyers and at this point you need to start thinking of the time you spend agreeing on the contents and the costs of typing this up in the mediators desired format (no kidding this will be the same information you have already supplied in some form but it now needs to be typed up in a different format – think more money). <br/><br/>Mediators will sit both parties down and talk through what each party wants (having received letters outlining this previously you sit there wondering why you are there because you already know what the other party wants).  The most frustrating part of this is mediators will not make recommendations or tell you the probable outcome of court but will repeat (over and over) what the other party wants as if you are not in the room when they state it).   The mediator can cost in excess of $5,000 and by the time you have paid your individual lawyers to prepare the necessary documents the whole exercise can cost $10K.  The crazy part of this is that if you end up starting court proceedings you will be required to attend mediation numerous times. <br/><br/>The difference we offer is that we are negotiators.  We will identify the gaps and try to close them by making both parties understand the cost of not agreeing.  Often people may only be 5%-10% apart but once you understand the cost of not agreeing this percentage becomes insignificant.<br/><br/>In other words, we help people understand the opportunity costs of delay.",
+    {
+      name: 'Brendan from Pymble',
+      description:
+        'I had no idea how little power my lawyer had.  No one can make the other person do anything except the Judge at the end.  A complete waste of time.',
     },
-    testimonials: [{
-        name: "<br/>Melissa from Castle Hill",
-        description: "I used a lawyer for 4 years. It was a complete waste of time and money. I wish I had of known about Divorce Negotiations.",
-    }, {
-        name: "Brendan from Pymble",
-        description: "I had no idea how little power my lawyer had.  No one can make the other person do anything except the Judge at the end.  A complete waste of time.",
-    }, {
-        name: "Casey from Sydney",
-        description: "I thought my lawyer was on my side.  They were always telling me to fight on right up until the time I told them I had no more money at which point they completely dropped me.  I had to settle for about half of what I was originally offered. A complete waste of money and time.",
-    }, {
-        name: "Kate from Bondi",
-        description: "My lawyer kept telling me I had a really strong case.  It dragged on for three and half years, cost so much money and when we got to the court day the Barrister (who I had paid up front) told me I needed to settle.   I felt so used.  I wished I had of used Divorce Negotiations.",
-    }],
-    gettingStarted: {
-        description: "Firstly, contact our office for an initial discussion which is free.  The aim of the initial call is to determine if we can help you (i.e.: if your desire for a successful outcome outweighs your negative feelings towards your ex-partner then there is a high degree chance of a successful outcome).  If we don’t believe we can help you we have no interest in wasting your time or money and we will explain why. <br/><br/>One of the most common reason why we may not be able to help you is if one of the parties has no interest in settling or they want their day in court.  Don’t despair because in some of these cases it may be an option to come back to us later once some of the emotions have settled down (or when the bank balance has received a significant battering). <br/><br/>If we believe we can help you the next step is to complete a quick form outlining the assets, liabilities and your desired outcome.  One of our team will then have a call with both parties individually and then we can make a decision whether to proceed with a formal negotiation session.  If we decide to proceed an appointment is set and at this point payment will be due. "
+    {
+      name: 'Casey from Sydney',
+      description:
+        'I thought my lawyer was on my side.  They were always telling me to fight on right up until the time I told them I had no more money at which point they completely dropped me.  I had to settle for about half of what I was originally offered. A complete waste of money and time.',
     },
-    contact: {
-        phone: "+61491061288‬",
-        phoneBeautified: "+61 491 061 288‬",
+    {
+      name: 'Kate from Bondi',
+      description:
+        'My lawyer kept telling me I had a really strong case.  It dragged on for three and half years, cost so much money and when we got to the court day the Barrister (who I had paid up front) told me I needed to settle.   I felt so used.  I wished I had of used Divorce Negotiations.',
     },
-    FAQ: [{
-        question: "What is the difference between mediators and Divorce Negotiations?",
-        answer: "Mediators spend their time repeating nearly verbatim what each party has said to the other party even though everyone was in the same room and heard firsthand what the other person said.  Mediators will not suggest what is or isn’t a good outcome.  Divorce Negotiations will identify the differences and try to bring the parties to a point of agreement.",
-    }, {
-        question: "Why should I use Divorce Negotiations and not a lawyer?",
-        answer: "The most misunderstood belief in the divorce process is the power of lawyers.  They are not negotiators, they communicate to each other via expensive letters back and forth and they are powerless to get one party to agree with the other.   This does not mean there is not a place for lawyers in the divorce process but if you have a relatively straightforward asset pool then spending money on lawyers is not necessary.  Unlike lawyers we won’t accept every client.  After our initial call, if we believe we can’t help you, we will tell you.",
-    }, {
-        question: "When should I use a lawyer?",
-        answer: "If you have complicated financial assets, issues of violence or child abuse Divorce Negotiations is not for you.  If you decide to consult a lawyer our advice is to use a Family Court Specialists (lawyers who only work on family court matters).",
-    }]
-}
+  ],
+  gettingStarted: {
+    description:
+      'Firstly, contact our office for an initial discussion which is free.  The aim of the initial call is to determine if we can help you (i.e.: if your desire for a successful outcome outweighs your negative feelings towards your ex-partner then there is a high degree chance of a successful outcome).  If we don’t believe we can help you we have no interest in wasting your time or money and we will explain why. <br/><br/>One of the most common reason why we may not be able to help you is if one of the parties has no interest in settling or they want their day in court.  Don’t despair because in some of these cases it may be an option to come back to us later once some of the emotions have settled down (or when the bank balance has received a significant battering). <br/><br/>If we believe we can help you the next step is to complete a quick form outlining the assets, liabilities and your desired outcome.  One of our team will then have a call with both parties individually and then we can make a decision whether to proceed with a formal negotiation session.  If we decide to proceed an appointment is set and at this point payment will be due. ',
+  },
+  contact: {
+    phone: '+61491061288‬',
+    phoneBeautified: '+61 491 061 288‬',
+  },
+  FAQ: [
+    {
+      question: 'What is the difference between mediators and Divorce Negotiations?',
+      answer:
+        'Mediators spend their time repeating nearly verbatim what each party has said to the other party even though everyone was in the same room and heard firsthand what the other person said.  Mediators will not suggest what is or isn’t a good outcome.  Divorce Negotiations will identify the differences and try to bring the parties to a point of agreement.',
+    },
+    {
+      question: 'Why should I use Divorce Negotiations and not a lawyer?',
+      answer:
+        'The most misunderstood belief in the divorce process is the power of lawyers.  They are not negotiators, they communicate to each other via expensive letters back and forth and they are powerless to get one party to agree with the other.   This does not mean there is not a place for lawyers in the divorce process but if you have a relatively straightforward asset pool then spending money on lawyers is not necessary.  Unlike lawyers we won’t accept every client.  After our initial call, if we believe we can’t help you, we will tell you.',
+    },
+    {
+      question: 'When should I use a lawyer?',
+      answer:
+        'If you have complicated financial assets, issues of violence or child abuse Divorce Negotiations is not for you.  If you decide to consult a lawyer our advice is to use a Family Court Specialists (lawyers who only work on family court matters).',
+    },
+  ],
+};
 
 // Let webpack compile all carousel images
 // and then substitute each avatar on each carousel
 // with the hash of the new compiled image
 info.carousel.items.map((item, index) => {
-    if (item.image) {
-        let carouselAvatar = require(`responsive-loader?placeholder=true&name=./img/carousel/[hash].&sizes[]=1200&!img/carousel/${item.image}`);
-        item.image = carouselAvatar;
-        info.carousel.items[index] = item;
-    }
+  if (item.image) {
+    const carouselAvatar = require(`responsive-loader?placeholder=true&name=./img/carousel/[hash].&sizes[]=1200&!img/carousel/${
+      item.image
+    }`);
+    item.image = carouselAvatar;
+    info.carousel.items[index] = item;
+  }
 });
 
 export default info;
